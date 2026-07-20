@@ -30,9 +30,9 @@ interface LanyardProps {
 }
 
 export default function Lanyard({
-  position = [0, 0, 14],
+  position = [0, 0, 22],
   gravity = [0, -40, 0],
-  fov = 30,
+  fov = 20,
   transparent = true
 }: LanyardProps) {
   const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== 'undefined' && window.innerWidth < 768);
@@ -223,7 +223,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
         >
           <CuboidCollider args={[0.66, 1.125, 0.006]} />
           <group
-            scale={[1.86, 2.25, 0.65]}
+            scale={[3.5, 4.5, 1.2]}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
