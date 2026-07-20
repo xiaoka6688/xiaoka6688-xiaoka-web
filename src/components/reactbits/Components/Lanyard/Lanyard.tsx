@@ -30,7 +30,7 @@ interface LanyardProps {
 }
 
 export default function Lanyard({
-  position = [0, 0, 22],
+  position = [0, 0, 30],
   gravity = [0, -40, 0],
   fov = 20,
   transparent = true
@@ -223,7 +223,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
         >
           <CuboidCollider args={[0.66, 1.125, 0.006]} />
           <group
-            scale={[3.5, 4.5, 1.2]}
+            scale={[1.86, 2.25, 0.65]}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
