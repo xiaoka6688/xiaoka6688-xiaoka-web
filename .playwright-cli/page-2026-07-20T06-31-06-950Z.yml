@@ -1,0 +1,363 @@
+- generic [ref=f8e2]:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - banner "Main navigation header":
+            - generic "Logo" [ref=f8e3]:
+              - img "Logo" [ref=f8e4]
+            - button "Open menu" [ref=f8e5] [cursor=pointer]:
+              - generic [ref=f8e7]:
+                - generic [ref=f8e8]: 菜单
+                - generic [ref=f8e9]: 关闭
+          - complementary [ref=f8e13]:
+            - generic [ref=f8e14]:
+              - list [ref=f8e15]:
+                - listitem [ref=f8e16]:
+                  - link [ref=f8e17] [cursor=pointer]:
+                    - /url: /#hero
+                    - generic [ref=f8e18]: Home
+                - listitem [ref=f8e19]:
+                  - link [ref=f8e20] [cursor=pointer]:
+                    - /url: /#services
+                    - generic [ref=f8e21]: 服务
+                - listitem [ref=f8e22]:
+                  - link [ref=f8e23] [cursor=pointer]:
+                    - /url: /#projects
+                    - generic [ref=f8e24]: 项目
+                - listitem [ref=f8e25]:
+                  - link [ref=f8e26] [cursor=pointer]:
+                    - /url: /#contact
+                    - generic [ref=f8e27]: 联系
+                - listitem [ref=f8e28]:
+                  - link [ref=f8e29] [cursor=pointer]:
+                    - /url: /credits
+                    - text: ↗
+                    - generic [ref=f8e30]: 致谢
+              - generic [ref=f8e31]:
+                - heading [level=3] [ref=f8e32]: 社交链接
+                - list [ref=f8e33]:
+                  - listitem [ref=f8e34]:
+                    - link [ref=f8e35] [cursor=pointer]:
+                      - /url: "#action:lang"
+                      - text: English
+                  - listitem [ref=f8e36]:
+                    - link [ref=f8e37] [cursor=pointer]:
+                      - /url: "#action:bg"
+                      - text: 切换背景
+                  - listitem [ref=f8e38]:
+                    - link [ref=f8e39] [cursor=pointer]:
+                      - /url: https://github.com/xiaoka6688
+                      - text: GitHub
+  - main [ref=f8e40]:
+    - generic [ref=f8e42]:
+      - paragraph [ref=f8e43]: 你好，我是小卡
+      - paragraph [ref=f8e44]:
+        - generic [ref=f8e45]: 你
+        - generic [ref=f8e46]: 好
+        - generic [ref=f8e47]: ，
+        - generic [ref=f8e48]: 我
+        - generic [ref=f8e49]: 是
+        - generic [ref=f8e50]: 小
+        - generic [ref=f8e51]: 卡
+      - paragraph [ref=f8e52]: AI深度研习探索者 · 破局AI项目圈/创业/学科网主理人 · 专注AI智能体开发与AIGC实战应用 · 10年+无人机经验 · 5年+新媒体运营 · 3年+AI实战。
+      - link "发送邮件联系 →" [ref=f8e54] [cursor=pointer]:
+        - /url: mailto:422970338@qq.com
+        - generic [ref=f8e59]: 发送邮件联系
+        - generic [ref=f8e60]: →
+    - generic [ref=f8e62]:
+      - generic [ref=f8e63]: 关于我
+      - paragraph [ref=f8e66]: AI实战派布道者 · 武汉 · 曾就职于高德、海康等高新技术企业，10年+无人机行业经验，5年+新媒体运营经历，3年+AI研习项目实战经验。
+    - generic [ref=f8e67]:
+      - heading "服务" [level=2] [ref=f8e69]
+      - paragraph [ref=f8e71]: AI智能体开发 · AIGC实战应用 · 点开看详情
+      - list [ref=f8e72]:
+        - listitem [ref=f8e73]:
+          - button "诗云 诗云 · 一切可能的诗 已上线" [ref=f8e74] [cursor=pointer]:
+            - generic [ref=f8e88]:
+              - generic [ref=f8e89]: 诗云
+              - generic [ref=f8e90]: 诗云 · 一切可能的诗
+            - generic [ref=f8e91]: 已上线
+            - generic [ref=f8e92]: →
+        - listitem [ref=f8e93]:
+          - button "AI中转 API 中转 · 多模型聚合 已上线" [ref=f8e94] [cursor=pointer]:
+            - generic [ref=f8e105]:
+              - generic [ref=f8e106]: AI中转
+              - generic [ref=f8e107]: API 中转 · 多模型聚合
+            - generic [ref=f8e108]: 已上线
+            - generic [ref=f8e109]: →
+        - listitem [ref=f8e110]:
+          - button "聊天记录系列 QQ · 微信 · 朋友圈 · 既有副业 5" [ref=f8e111] [cursor=pointer]:
+            - generic [ref=f8e119]:
+              - generic [ref=f8e120]: 聊天记录系列
+              - generic [ref=f8e121]: QQ · 微信 · 朋友圈 · 既有副业
+            - generic [ref=f8e122]: "5"
+            - generic [ref=f8e123]: →
+        - listitem [ref=f8e124]:
+          - button "命理推演 自动算命 · 命理推演 已上线" [ref=f8e125] [cursor=pointer]:
+            - generic [ref=f8e130]:
+              - generic [ref=f8e131]: 命理推演
+              - generic [ref=f8e132]: 自动算命 · 命理推演
+            - generic [ref=f8e133]: 已上线
+            - generic [ref=f8e134]: →
+        - listitem [ref=f8e135]:
+          - button "破局AI创业 知识付费 · 在线课程平台 已上线" [ref=f8e136] [cursor=pointer]:
+            - generic [ref=f8e142]:
+              - generic [ref=f8e143]: 破局AI创业
+              - generic [ref=f8e144]: 知识付费 · 在线课程平台
+            - generic [ref=f8e145]: 已上线
+            - generic [ref=f8e146]: →
+        - listitem [ref=f8e147]:
+          - button "小卡AI绘图 AI绘图 · 国内可用 已上线" [ref=f8e148] [cursor=pointer]:
+            - generic [ref=f8e162]:
+              - generic [ref=f8e163]: 小卡AI绘图
+              - generic [ref=f8e164]: AI绘图 · 国内可用
+            - generic [ref=f8e165]: 已上线
+            - generic [ref=f8e166]: →
+        - listitem [ref=f8e167]:
+          - button "Dreampix-AI AI绘图 · 提示词模板案例库 已上线" [ref=f8e168] [cursor=pointer]:
+            - generic [ref=f8e182]:
+              - generic [ref=f8e183]: Dreampix-AI
+              - generic [ref=f8e184]: AI绘图 · 提示词模板案例库
+            - generic [ref=f8e185]: 已上线
+            - generic [ref=f8e186]: →
+        - listitem [ref=f8e187]:
+          - button "小卡海报编辑器 Markdown海报 · 离线可用 已上线" [ref=f8e188] [cursor=pointer]:
+            - generic [ref=f8e197]:
+              - generic [ref=f8e198]: 小卡海报编辑器
+              - generic [ref=f8e199]: Markdown海报 · 离线可用
+            - generic [ref=f8e200]: 已上线
+            - generic [ref=f8e201]: →
+      - paragraph [ref=f8e202]: AI实战派布道者 · 合作交流请邮件 422970338@qq.com
+    - generic [ref=f8e203]:
+      - heading "项目" [level=2] [ref=f8e205]
+      - generic [ref=f8e207]:
+        - link "诗云 — 一张可飞行的三维诗歌星图:每位诗人是一团真实星,星团之间的虚空是一切可能的近体诗。点一下,就从噪声里算出一首诗。" [ref=f8e208] [cursor=pointer]:
+          - /url: /projects/poetry-cloud
+          - generic [ref=f8e209]:
+            - img "诗云 preview" [ref=f8e211]
+            - generic [ref=f8e213]:
+              - generic [ref=f8e214]:
+                - heading "诗云" [level=3] [ref=f8e215]
+                - generic [ref=f8e216]: ↗
+              - paragraph [ref=f8e217]: 一张可飞行的三维诗歌星图:每位诗人是一团真实星,星团之间的虚空是一切可能的近体诗。点一下,就从噪声里算出一首诗。
+              - generic [ref=f8e218]:
+                - generic [ref=f8e219]: TypeScript
+                - generic [ref=f8e220]: three.js
+                - generic [ref=f8e221]: WebGL
+                - generic [ref=f8e222]: 生成式
+              - generic [ref=f8e223]:
+                - generic [ref=f8e224]: 查看详情
+                - generic [ref=f8e225]: →
+        - link "声谱坊 — 完全本地的一体化音乐处理:拆声、记谱、简谱⇄五线谱互译、修音换音色。" [ref=f8e226] [cursor=pointer]:
+          - /url: /projects/music-master
+          - generic [ref=f8e227]:
+            - img "声谱坊 preview" [ref=f8e229]
+            - generic [ref=f8e231]:
+              - generic [ref=f8e232]:
+                - heading "声谱坊" [level=3] [ref=f8e233]
+                - generic [ref=f8e234]: ↗
+              - paragraph [ref=f8e235]: 完全本地的一体化音乐处理:拆声、记谱、简谱⇄五线谱互译、修音换音色。
+              - generic [ref=f8e236]:
+                - generic [ref=f8e237]: Python
+                - generic [ref=f8e238]: 音频AI
+                - generic [ref=f8e239]: 本地优先
+                - generic [ref=f8e240]: 开源
+              - generic [ref=f8e241]:
+                - generic [ref=f8e242]: 查看详情
+                - generic [ref=f8e243]: →
+        - link "引物评分Web版 — 把 PCR 引物设计搬上 Web,BLAST + 表达感知评分。" [ref=f8e244] [cursor=pointer]:
+          - /url: /projects/primer-score
+          - generic [ref=f8e245]:
+            - img "引物评分Web版 preview" [ref=f8e247]
+            - generic [ref=f8e249]:
+              - generic [ref=f8e250]:
+                - heading "引物评分Web版" [level=3] [ref=f8e251]
+                - generic [ref=f8e252]: ↗
+              - paragraph [ref=f8e253]: 把 PCR 引物设计搬上 Web,BLAST + 表达感知评分。
+              - generic [ref=f8e254]:
+                - generic [ref=f8e255]: Python
+                - generic [ref=f8e256]: 生物信息学
+                - generic [ref=f8e257]: BLAST
+                - generic [ref=f8e258]: Web
+              - generic [ref=f8e259]:
+                - generic [ref=f8e260]: 查看详情
+                - generic [ref=f8e261]: →
+        - link "节奏游戏修改器 — 两款节奏游戏的内置图形修改器:Autoplay 满分自动演奏、变速、放宽判定、关卡直达。" [ref=f8e262] [cursor=pointer]:
+          - /url: /projects/rhythm-game-trainers
+          - generic [ref=f8e263]:
+            - img "节奏游戏修改器 preview" [ref=f8e265]
+            - generic [ref=f8e267]:
+              - generic [ref=f8e268]:
+                - heading "节奏游戏修改器" [level=3] [ref=f8e269]
+                - generic [ref=f8e270]: ↗
+              - paragraph [ref=f8e271]: 两款节奏游戏的内置图形修改器:Autoplay 满分自动演奏、变速、放宽判定、关卡直达。
+              - generic [ref=f8e272]:
+                - generic [ref=f8e273]: C#
+                - generic [ref=f8e274]: BepInEx
+                - generic [ref=f8e275]: 游戏修改
+                - generic [ref=f8e276]: 开源
+              - generic [ref=f8e277]:
+                - generic [ref=f8e278]: 查看详情
+                - generic [ref=f8e279]: →
+        - link "Claude用量监视器 — 常驻任务栏的 Claude Code 用量监视器,5h/周配额 + 分项目花费一眼看清。" [ref=f8e280] [cursor=pointer]:
+          - /url: /projects/claude-usage-monitor
+          - generic [ref=f8e281]:
+            - img "Claude用量监视器 preview" [ref=f8e283]
+            - generic [ref=f8e285]:
+              - generic [ref=f8e286]:
+                - heading "Claude用量监视器" [level=3] [ref=f8e287]
+                - generic [ref=f8e288]: ↗
+              - paragraph [ref=f8e289]: 常驻任务栏的 Claude Code 用量监视器,5h/周配额 + 分项目花费一眼看清。
+              - generic [ref=f8e290]:
+                - generic [ref=f8e291]: Python
+                - generic [ref=f8e292]: Windows
+                - generic [ref=f8e293]: 桌面应用
+                - generic [ref=f8e294]: 开源
+              - generic [ref=f8e295]:
+                - generic [ref=f8e296]: 查看详情
+                - generic [ref=f8e297]: →
+        - link "迷你语音房 — 免注册的轻量 WebRTC 语音房,一个链接就能开黑。" [ref=f8e298] [cursor=pointer]:
+          - /url: /projects/tiny-voice-room
+          - generic [ref=f8e299]:
+            - img "迷你语音房 preview" [ref=f8e301]
+            - generic [ref=f8e303]:
+              - generic [ref=f8e304]:
+                - heading "迷你语音房" [level=3] [ref=f8e305]
+                - generic [ref=f8e306]: ↗
+              - paragraph [ref=f8e307]: 免注册的轻量 WebRTC 语音房,一个链接就能开黑。
+              - generic [ref=f8e308]:
+                - generic [ref=f8e309]: WebRTC
+                - generic [ref=f8e310]: TypeScript
+                - generic [ref=f8e311]: Docker
+                - generic [ref=f8e312]: 自托管
+              - generic [ref=f8e313]:
+                - generic [ref=f8e314]: 查看详情
+                - generic [ref=f8e315]: →
+        - link "抖音运营工具箱 — 本地批量转写、抖音链接提取、AI分析、私有知识库、创作Agent一体化桌面工具。" [ref=f8e316] [cursor=pointer]:
+          - /url: /projects/douyin-toolkit
+          - generic [ref=f8e317]:
+            - img "抖音运营工具箱 preview" [ref=f8e319]
+            - generic [ref=f8e321]:
+              - generic [ref=f8e322]:
+                - heading "抖音运营工具箱" [level=3] [ref=f8e323]
+                - generic [ref=f8e324]: ↗
+              - paragraph [ref=f8e325]: 本地批量转写、抖音链接提取、AI分析、私有知识库、创作Agent一体化桌面工具。
+              - generic [ref=f8e326]:
+                - generic [ref=f8e327]: Tauri
+                - generic [ref=f8e328]: React
+                - generic [ref=f8e329]: Rust
+                - generic [ref=f8e330]: AI Agent
+              - generic [ref=f8e331]:
+                - generic [ref=f8e332]: 查看详情
+                - generic [ref=f8e333]: →
+        - link "破局AI创业 — 知识付费系统搭建，虚拟资源网课平台。汇集AI、短视频、电商、引流等领域的精品课程与实战教程。" [ref=f8e334] [cursor=pointer]:
+          - /url: /projects/pjht
+          - generic [ref=f8e335]:
+            - img "破局AI创业 preview" [ref=f8e337]
+            - generic [ref=f8e339]:
+              - generic [ref=f8e340]:
+                - heading "破局AI创业" [level=3] [ref=f8e341]
+                - generic [ref=f8e342]: ↗
+              - paragraph [ref=f8e343]: 知识付费系统搭建，虚拟资源网课平台。汇集AI、短视频、电商、引流等领域的精品课程与实战教程。
+              - generic [ref=f8e344]:
+                - generic [ref=f8e345]: 知识付费
+                - generic [ref=f8e346]: 在线教育
+                - generic [ref=f8e347]: AI创业
+                - generic [ref=f8e348]: 电商
+              - generic [ref=f8e349]:
+                - generic [ref=f8e350]: 查看详情
+                - generic [ref=f8e351]: →
+        - link "小卡AI绘图 — 国内可用的AI绘图工具，支持GPT Image 2等多种模型，简单快捷生成高质量图片。" [ref=f8e352] [cursor=pointer]:
+          - /url: /projects/ai-draw
+          - generic [ref=f8e353]:
+            - img "小卡AI绘图 preview" [ref=f8e355]
+            - generic [ref=f8e357]:
+              - generic [ref=f8e358]:
+                - heading "小卡AI绘图" [level=3] [ref=f8e359]
+                - generic [ref=f8e360]: ↗
+              - paragraph [ref=f8e361]: 国内可用的AI绘图工具，支持GPT Image 2等多种模型，简单快捷生成高质量图片。
+              - generic [ref=f8e362]:
+                - generic [ref=f8e363]: AI绘图
+                - generic [ref=f8e364]: 图片生成
+                - generic [ref=f8e365]: GPT
+                - generic [ref=f8e366]: 国内可用
+              - generic [ref=f8e367]:
+                - generic [ref=f8e368]: 查看详情
+                - generic [ref=f8e369]: →
+        - link "Dreampix-AI — 基于GPT Image 2的AI绘图工具，包含161+真实可复用提示词案例库。" [ref=f8e370] [cursor=pointer]:
+          - /url: /projects/dreampix
+          - generic [ref=f8e371]:
+            - img "Dreampix-AI preview" [ref=f8e373]
+            - generic [ref=f8e375]:
+              - generic [ref=f8e376]:
+                - heading "Dreampix-AI" [level=3] [ref=f8e377]
+                - generic [ref=f8e378]: ↗
+              - paragraph [ref=f8e379]: 基于GPT Image 2的AI绘图工具，包含161+真实可复用提示词案例库。
+              - generic [ref=f8e380]:
+                - generic [ref=f8e381]: AI绘图
+                - generic [ref=f8e382]: 提示词案例库
+                - generic [ref=f8e383]: GPT Image 2
+              - generic [ref=f8e384]:
+                - generic [ref=f8e385]: 查看详情
+                - generic [ref=f8e386]: →
+        - link "小卡海报编辑器 — 本地优先、离线可用的Markdown文字海报生成器，支持多种模板尺寸。" [ref=f8e387] [cursor=pointer]:
+          - /url: /projects/poster-editor
+          - generic [ref=f8e388]:
+            - img "小卡海报编辑器 preview" [ref=f8e390]
+            - generic [ref=f8e392]:
+              - generic [ref=f8e393]:
+                - heading "小卡海报编辑器" [level=3] [ref=f8e394]
+                - generic [ref=f8e395]: ↗
+              - paragraph [ref=f8e396]: 本地优先、离线可用的Markdown文字海报生成器，支持多种模板尺寸。
+              - generic [ref=f8e397]:
+                - generic [ref=f8e398]: 海报编辑器
+                - generic [ref=f8e399]: Markdown
+                - generic [ref=f8e400]: 离线工具
+                - generic [ref=f8e401]: 开源
+              - generic [ref=f8e402]:
+                - generic [ref=f8e403]: 查看详情
+                - generic [ref=f8e404]: →
+    - generic [ref=f8e405]:
+      - heading "联系" [level=2] [ref=f8e407]
+      - generic [ref=f8e409]:
+        - paragraph [ref=f8e412]: ↑ 试着拖动这张卡片
+        - generic [ref=f8e413]:
+          - generic [ref=f8e414]:
+            - paragraph [ref=f8e415]: 合作交流
+            - heading "小卡" [level=3] [ref=f8e416]
+            - paragraph [ref=f8e417]: AI实战派布道者 · 武汉
+          - paragraph [ref=f8e418]: AI实战派布道者，专注AI智能体开发与AIGC实战应用。无论是项目合作、技术交流还是AI培训，欢迎随时联系。
+          - generic [ref=f8e419]:
+            - link "邮箱 422970338@qq.com" [ref=f8e420] [cursor=pointer]:
+              - /url: mailto:422970338@qq.com
+              - generic [ref=f8e421]:
+                - generic [ref=f8e426]:
+                  - generic [ref=f8e427]: 邮箱
+                  - generic [ref=f8e428]: 422970338@qq.com
+                - generic [ref=f8e429]: ↗
+            - link "GitHub @xiaoka6688" [ref=f8e430] [cursor=pointer]:
+              - /url: https://github.com/xiaoka6688
+              - generic [ref=f8e431]:
+                - generic [ref=f8e435]:
+                  - generic [ref=f8e436]: GitHub
+                  - generic [ref=f8e437]: "@xiaoka6688"
+                - generic [ref=f8e438]: ↗
+            - link "Instagram @mk.cohen.3" [ref=f8e439] [cursor=pointer]:
+              - /url: https://www.instagram.com/mk.cohen.3/
+              - generic [ref=f8e440]:
+                - generic [ref=f8e445]:
+                  - generic [ref=f8e446]: Instagram
+                  - generic [ref=f8e447]: "@mk.cohen.3"
+                - generic [ref=f8e448]: ↗
+            - link "Louie的主页 louie1.com" [ref=f8e449] [cursor=pointer]:
+              - /url: https://louie1.com
+              - generic [ref=f8e450]:
+                - generic [ref=f8e455]:
+                  - generic [ref=f8e456]: Louie的主页
+                  - generic [ref=f8e457]: louie1.com
+                - generic [ref=f8e458]: ↗
+          - link "联系我 →" [ref=f8e460] [cursor=pointer]:
+            - /url: mailto:422970338@qq.com
+            - text: 联系我
+            - generic [ref=f8e464]: →
