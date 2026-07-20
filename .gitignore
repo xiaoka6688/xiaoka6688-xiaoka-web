@@ -1,0 +1,22 @@
+node_modules
+dist
+dist-ssr
+.vite
+*.local
+*.tsbuildinfo
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.log
+_legacy/
+
+# Local Claude Code permission whitelist — per-user, do not commit
+.claude/settings.local.json
+.claude/worktrees/
+
+# WorkBuddy 本地工作记忆 — 不提交
+.workbuddy/
+
+# 临时备份目录
+_backup/

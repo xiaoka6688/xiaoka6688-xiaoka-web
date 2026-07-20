@@ -1,0 +1,48 @@
+XiaoKa Portfolio - Quick Start Guide
+=====================================
+
+Quick Start
+-----------
+1. Double-click "启动开发服务器.bat"
+2. Wait for dependencies to install (first run only)
+3. Browser will auto-open http://localhost:5173
+4. Start developing!
+
+Scripts
+-------
+启动开发服务器.bat  - Start dev server (auto-opens browser)
+构建生产版本.bat    - Build for production
+
+Common Commands
+---------------
+npm run dev      - Start dev server
+npm run build    - Build production
+npm run preview  - Preview build
+
+Requirements
+------------
+- Node.js 16+ (recommended 20+)
+- npm 7+
+- Download: https://nodejs.org/
+
+Project Structure
+-----------------
+src/             - Source code
+public/          - Static assets
+dist/            - Build output (after build)
+
+FAQ
+---
+Q: Script flashes and closes?
+A: Make sure Node.js is installed. Run "node --version" to check.
+
+Q: Dependencies install fails?
+A: Delete node_modules folder and run script again.
+
+Q: Port 5173 is busy?
+A: Close other programs using port 5173, or edit vite.config.ts.
+
+Contact
+-------
+Email: q63725959@gmail.com
+GitHub: https://github.com/Cohenjikan
