@@ -20,3 +20,6 @@ _legacy/
 
 # 临时备份目录
 _backup/
+
+# Playwright 测试产物
+.playwright-cli/
