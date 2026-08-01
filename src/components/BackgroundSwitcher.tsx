@@ -80,6 +80,14 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
   const reduced = useMemo(() => prefersReducedMotion(), []);
 
   const initial = useMemo(() => {
+    // 清理旧的 cohen.lastBg 键
+    if (typeof window !== 'undefined') {
+      const oldKey = window.localStorage.getItem('cohen.lastBg');
+      if (oldKey) {
+        window.localStorage.removeItem('cohen.lastBg');
+      }
+    }
+
     const last = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null;
     // 如果有上次保存的背景就用它，否则用默认背景（不随机）
     if (last) {
