@@ -3,6 +3,8 @@
 // 可见竖向范围约 y:0~1163（SVG 总高 1536 的顶部 75.7%），竖向被拉伸约 1.48×。
 // 所有可编辑内容都集中在 CardConfig，改任意字段都会重新生成 SVG 并刷新 3D 贴图。
 
+import { publicAsset } from '../../../../utils/publicAsset';
+
 export interface CardConfig {
   /** 姓名（卡片主标题，同时作为背面水印） */
   name: string;
@@ -57,7 +59,7 @@ export function buildCardSVG(config: CardConfig): string {
 
   // 头像区：圆形裁剪，宽 350 高 350，圆心 (512,430) r=175
   const avatarBlock = avatar
-    ? `<g clip-path="url(#avatarClip)"><image href="${avatar}" x="337" y="255" width="350" height="350" preserveAspectRatio="xMidYMid slice"/></g>`
+    ? `<g clip-path="url(#avatarClip)"><image href="${publicAsset(avatar)}" x="337" y="255" width="350" height="350" preserveAspectRatio="xMidYMid slice"/></g>`
     : `<g clip-path="url(#avatarClip)">
          <rect x="337" y="255" width="350" height="350" fill="#0f3460"/>
          <circle cx="512" cy="392" r="52" fill="${accent}" opacity="0.92"/>

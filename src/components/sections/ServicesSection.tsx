@@ -30,6 +30,7 @@ import { BrandKitDemo } from './services/BrandKitDemo';
 import { LogoDesignDemo } from './services/LogoDesignDemo';
 import { IpAgentDemo } from './services/IpAgentDemo';
 import { ImageLightbox } from './services/ImageLightbox';
+import { publicAsset } from '../../utils/publicAsset';
 
 // Services sits between About and Projects in the page rhythm, but its visual
 // weight is intentionally LOWER than Projects: a single-column compact list,
@@ -174,12 +175,12 @@ const ServiceRow = ({ s, isOpen, onToggle, onOpenLightbox, onInquire, locale }: 
           {s.sampleImage && (
             <button
               type="button"
-              onClick={() => onOpenLightbox({ src: s.sampleImage!, alt: `${s.name} sample` })}
+              onClick={() => onOpenLightbox({ src: publicAsset(s.sampleImage!), alt: `${s.name} sample` })}
               className="group/sample mb-4 flex w-full items-center gap-3 rounded-xl border border-white/10 bg-black/40 p-2 text-left transition-all hover:border-[color:var(--service-accent)] hover:bg-black/55"
             >
               <span className="relative block h-16 w-28 shrink-0 overflow-hidden rounded-lg bg-black/60">
                 <img
-                  src={s.sampleImage}
+                  src={publicAsset(s.sampleImage)}
                   alt=""
                   loading="lazy"
                   aria-hidden

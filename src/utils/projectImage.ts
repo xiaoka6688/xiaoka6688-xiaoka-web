@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { publicAsset } from './publicAsset';
 
 const EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp', 'svg'];
 
@@ -38,7 +39,7 @@ export function useProjectImage(slug: string, name: string): {
       }
 
       const ext = EXTENSIONS[index];
-      const url = `/projects/${slug}/${name}.${ext}`;
+      const url = publicAsset(`/projects/${slug}/${name}.${ext}`);
       const img = new Image();
 
       img.onload = () => {

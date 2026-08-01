@@ -5,6 +5,7 @@ import { useBackground } from '../BackgroundSwitcher';
 import { useCardConfig } from '../../contexts/CardConfigContext';
 import { AdminPanel } from '../admin/AdminPanel';
 import { ContactSectionManager } from '../admin/ContactSectionManager';
+import { publicAsset } from '../../utils/publicAsset';
 
 // 设置项样式
 const fieldCls =
@@ -149,7 +150,7 @@ export function SettingsPanel() {
   }, [open, close]);
 
   const avatarStyle = cardConfig.avatar
-    ? { backgroundImage: `url(${cardConfig.avatar})` }
+    ? { backgroundImage: `url(${publicAsset(cardConfig.avatar)})` }
     : { background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.10))' };
 
   return (

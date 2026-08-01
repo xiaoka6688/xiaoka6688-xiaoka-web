@@ -1,5 +1,6 @@
 import { useRef, type ChangeEvent } from 'react';
 import type { CardConfig } from './cardConfig';
+import { publicAsset } from '../../../../utils/publicAsset';
 
 interface CardEditorProps {
   config: CardConfig;
@@ -27,7 +28,7 @@ export default function CardEditor({ config, onChange, onReset }: CardEditorProp
   };
 
   const avatarStyle = config.avatar
-    ? { backgroundImage: `url(${config.avatar})` }
+    ? { backgroundImage: `url(${publicAsset(config.avatar)})` }
     : {
         background:
           'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.10))'
