@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import {
@@ -18,7 +18,7 @@ import * as THREE from 'three';
 // replace with your own imports, see the usage snippet for details
 import cardGLB from './card.glb';
 import lanyard from './lanyard.png';
-import xiaokaCard from './xiaoka-card.svg';
+import { defaultCardConfig, buildCardSVG, type CardConfig } from './cardConfig';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -27,13 +27,16 @@ interface LanyardProps {
   gravity?: [number, number, number];
   fov?: number;
   transparent?: boolean;
+  /** 工牌可编辑内容；改动会实时刷新 3D 贴图 */
+  cardConfig?: CardConfig;
 }
 
 export default function Lanyard({
   position = [0, 0, 30],
   gravity = [0, -40, 0],
   fov = 20,
-  transparent = true
+  transparent = true,
+  cardConfig = defaultCardConfig
 }: LanyardProps) {
   const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
@@ -67,7 +70,7 @@ export default function Lanyard({
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
-          <Band isMobile={isMobile} />
+          <Band isMobile={isMobile} cardConfig={cardConfig} />
         </Physics>
         <Environment blur={0.75}>
           <Lightformer
@@ -108,9 +111,10 @@ interface BandProps {
   maxSpeed?: number;
   minSpeed?: number;
   isMobile?: boolean;
+  cardConfig?: CardConfig;
 }
 
-function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
+function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false, cardConfig = defaultCardConfig }: BandProps) {
   // Using "any" for refs since the exact types depend on Rapier's internals
   const band = useRef<any>(null);
   const fixed = useRef<any>(null);
@@ -134,7 +138,26 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
 
   const { nodes, materials } = useGLTF(cardGLB) as any;
   const bandTexture = useTexture(lanyard);
-  const cardTexture = useTexture(xiaokaCard);
+  // 由 cardConfig 实时生成的卡片贴图（替代静态 SVG 文件）
+  const cardTexture = useMemo(() => new THREE.Texture(), []);
+
+  useEffect(() => {
+    const svg = buildCardSVG(cardConfig);
+    const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    const img = new Image();
+    img.onload = () => {
+      cardTexture.image = img;
+      cardTexture.flipY = false;
+      cardTexture.colorSpace = THREE.SRGBColorSpace;
+      cardTexture.wrapS = cardTexture.wrapT = THREE.ClampToEdgeWrapping;
+      cardTexture.generateMipmaps = false;
+      cardTexture.minFilter = THREE.LinearFilter;
+      cardTexture.magFilter = THREE.LinearFilter;
+      cardTexture.anisotropy = 16;
+      cardTexture.needsUpdate = true;
+    };
+    img.src = url;
+  }, [cardConfig, cardTexture]);
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()])
@@ -193,14 +216,6 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
 
   curve.curveType = 'chordal';
   bandTexture.wrapS = bandTexture.wrapT = THREE.RepeatWrapping;
-  cardTexture.flipY = false;
-  cardTexture.colorSpace = THREE.SRGBColorSpace;
-  cardTexture.wrapS = cardTexture.wrapT = THREE.ClampToEdgeWrapping;
-  cardTexture.generateMipmaps = false;
-  cardTexture.minFilter = THREE.LinearFilter;
-  cardTexture.magFilter = THREE.LinearFilter;
-  cardTexture.anisotropy = 16;
-  cardTexture.needsUpdate = true;
 
   return (
     <>

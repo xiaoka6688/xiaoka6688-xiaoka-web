@@ -15,7 +15,12 @@ export type DemoId =
   | 'pjht'
   | 'ai-draw'
   | 'dreampix'
-  | 'poster-editor';
+  | 'poster-editor'
+  | 'brand-kit'
+  | 'logo-design'
+  | 'ip-agent'
+  | 'ai-design'
+  | 'news-trend';
 
 export interface ServiceItem {
   slug: string;
@@ -63,23 +68,42 @@ export interface ServiceItem {
 // screenshot of the actual artifact (except Continuum, which is demo-only).
 export const services: ServiceItem[] = [
   {
-    slug: 'shiyun',
-    name: '诗云',
-    subtitle: { zh: '诗云 · 一切可能的诗', en: '诗云 · 一切可能的诗' },
+    slug: 'ai-brand-kit',
+    name: 'AI Brand Kit',
+    subtitle: { zh: '品牌设计 · 一键生成', en: 'Brand Design · One-Click Generate' },
     tagline: {
-      zh: '一张可飞行的三维诗歌星图:每位诗人是一团真实星,星团之间的虚空是一切可能的近体诗。点一下虚空,就用「编号↔诗」的双射当场算出一首,地址长达 82–229 位——诗不被储存,给个编号就能算出第几首。',
-      en: '一张可飞行的三维诗歌星图:每位诗人是一团真实星,星团之间的虚空是一切可能的近体诗。点一下虚空,就用「编号↔诗」的双射当场算出一首,地址长达 82–229 位——诗不被储存,给个编号就能算出第几首。'
+      zh: '参考图驱动的AI品牌设计工具:上传一张参考图(真人照或Logo),一键生成完整的品牌视觉资产包,包括Logo家族、头像、社交封面等。',
+      en: 'AI-powered brand design tool driven by reference images: Upload a reference photo (portrait or logo) to generate a complete brand visual asset package, including logo family, avatars, social covers, and more.'
     },
     features: {
-      zh: ['全朝代诗人星团 · 可飞行 / 按朝代筛选', '点虚空 unrank 出诗 + 完整长编号', '赠诗网络 4,849 弧 · 逐句搜索 / 编号反查'],
-      en: ['全朝代诗人星团 · 可飞行 / 按朝代筛选', '点虚空 unrank 出诗 + 完整长编号', '赠诗网络 4,849 弧 · 逐句搜索 / 编号反查']
+      zh: ['Logo家族 · 多尺寸多场景适配', '头像家族 · 动态头像 · 社交封面一键生成', 'SVG源文件 + PNG多尺寸 + ZIP打包下载'],
+      en: ['Logo family · Multi-size multi-scene adaptation', 'Avatar family · Dynamic avatars · Social covers one-click generation', 'SVG source + Multi-size PNG + ZIP package download']
     },
-    tags: ['three.js', 'WebGL', '生成式'],
+    tags: ['SVG', '品牌设计', 'AI生成'],
     emblem: 'poetry',
-    demo: 'poetry',
-    sampleImage: '/services/shiyun.jpg',
+    demo: 'brand-kit',
+    sampleImage: null,
     accentRgba: 'rgba(94, 234, 212, 0.5)',
-    visitUrl: 'https://shiyun.cohenjikan.com'
+    visitUrl: 'https://xiaoka6688.github.io/AI-Brand-Kit-Skill/'
+  },
+  {
+    slug: 'ip-agent',
+    name: 'IP Agent',
+    subtitle: { zh: '营销获客 · AI视频创作', en: 'Marketing · AI Video Creation' },
+    tagline: {
+      zh: '一站式AI视频创作解决方案：文案生成、音频合成、数字人口播、智能剪辑、标题封面、一键多平台发布。',
+      en: 'One-stop AI video creation solution: copywriting, audio synthesis, digital human presentation, smart editing, title covers, one-click multi-platform publishing.'
+    },
+    features: {
+      zh: ['文案生成 · 智能选题 + AI辅助创作', '数字人口播 · 多形象多音色', '一键发布 · 抖音/视频号/小红书'],
+      en: ['Copywriting · Smart topic selection + AI assisted creation', 'Digital human presentation · Multiple avatars and voices', 'One-click publish · Douyin/Video Account/Xiaohongshu']
+    },
+    tags: ['AI视频', '营销获客', '数字人'],
+    emblem: 'relay',
+    demo: 'ip-agent',
+    sampleImage: null,
+    accentRgba: 'rgba(168, 85, 247, 0.55)',
+    visitUrl: 'https://agent.pojuai.com/'
   },
   {
     slug: 'echo',
@@ -178,50 +202,46 @@ export const services: ServiceItem[] = [
   },
   // ── Shipped subdomain products (ai / ming / for) ──────────────────────────
   {
-    slug: 'ai',
-    name: 'AI中转',
-    subtitle: { zh: 'API 中转 · 多模型聚合', en: 'API 中转 · 多模型聚合' },
+    slug: 'logo-design',
+    name: 'Logo Design',
+    subtitle: { zh: 'Logo设计 · 多平台适配', en: 'Logo Design · Multi-platform' },
     tagline: {
-      zh: '把 Claude / ChatGPT / DeepSeek 聚合到一个自用接口的中转层:统一密钥、统一调用,按个人需求私下配置 —— 个人自用,不对外分发、不公开转售。',
-      en: '把 Claude / ChatGPT / DeepSeek 聚合到一个自用接口的中转层:统一密钥、统一调用,按个人需求私下配置 —— 个人自用,不对外分发、不公开转售。'
+      zh: '在线Logo设计与处理平台:文字Logo生成、图标多平台适配、AI从零设计、风格重绘，一站式解决品牌标识需求。',
+      en: 'Online Logo design and processing platform: text Logo generation, multi-platform icon adaptation, AI design from scratch, style redraw - one-stop solution for brand identity needs.'
     },
     features: {
-      zh: ['Claude · ChatGPT · DeepSeek 一站聚合', '统一密钥 · 个人自用配置', '私下接入 · 不公开分发'],
-      en: ['Claude · ChatGPT · DeepSeek 一站聚合', '统一密钥 · 个人自用配置', '私下接入 · 不公开分发']
+      zh: ['文字Logo生成 · 免费无需API', '图标自动适配多平台尺寸', 'AI设计 + 风格重绘 · 打包下载'],
+      en: ['Text Logo generation · Free no API needed', 'Auto-adapt icons for multi-platform sizes', 'AI design + Style redraw · Package download']
     },
-    tags: ['API网关', '多模型', '个人'],
+    tags: ['Logo设计', '品牌', 'AI生成'],
     emblem: 'relay',
-    demo: 'relay',
-    sampleImage: null, // live site replaces the static sample
+    demo: 'logo-design',
+    sampleImage: null,
     accentRgba: 'rgba(96, 165, 250, 0.55)',
-    visitUrl: 'https://ai.cohenjikan.com'
+    visitUrl: 'https://logo.pojuai.com/'
   },
   {
-    slug: 'ming',
-    name: '命理推演',
-    subtitle: { zh: '自动算命 · 命理推演', en: '自动算命 · 命理推演' },
+    slug: 'ai-design',
+    name: 'AI Design',
+    subtitle: { zh: 'AI设计 · 创意工具', en: 'AI Design · Creative Tools' },
     tagline: {
-      zh: '自动算命的命理学网站:融合生辰八字、五行、八卦、星盘、星座与塔罗牌,一次输入生成完整命理画像。',
-      en: '自动算命的命理学网站:融合生辰八字、五行、八卦、星盘、星座与塔罗牌,一次输入生成完整命理画像。'
+      zh: 'AI驱动的设计工具平台：支持多种创意设计场景，提供智能化设计方案，助力创意工作者高效产出。',
+      en: 'AI-driven design tool platform: Supports various creative design scenarios, provides intelligent design solutions, helping creative workers produce efficiently.'
     },
     features: {
-      zh: ['生辰八字 · 五行 · 八卦排盘', '星盘 / 星座 / 塔罗牌综合', '一次输入 · 全自动出报告'],
-      en: ['生辰八字 · 五行 · 八卦排盘', '星盘 / 星座 / 塔罗牌综合', '一次输入 · 全自动出报告']
+      zh: ['AI智能设计 · 多场景支持', '创意工具 · 高效产出', '在线使用 · 无需安装'],
+      en: ['AI intelligent design · Multi-scenario support', 'Creative tools · Efficient output', 'Online use · No installation needed']
     },
-    tags: ['八字', '星盘', '塔罗'],
+    tags: ['AI设计', '创意工具', '在线平台'],
     emblem: 'bazi',
-    demo: 'bazi',
+    demo: 'ai-design',
     sampleImage: null,
     accentRgba: 'rgba(196, 160, 255, 0.55)',
-    visitUrl: 'https://ming.cohenjikan.com',
-    disclaimer: {
-      zh: '声明:本站命理 / 塔罗内容仅供娱乐与文化体验,不构成任何决策依据。请崇尚科学、相信努力,自觉抵制封建迷信,并遵守当地法律法规。',
-      en: '声明:本站命理 / 塔罗内容仅供娱乐与文化体验,不构成任何决策依据。请崇尚科学、相信努力,自觉抵制封建迷信,并遵守当地法律法规。'
-    }
+    visitUrl: 'https://design.pojuai.com/'
   },
   {
     slug: 'pjht',
-    name: '破局AI创业',
+    name: '破局AI项目圈',
     subtitle: { zh: '知识付费 · 在线课程平台', en: '知识付费 · 在线课程平台' },
     tagline: { zh: '知识付费系统搭建,虚拟资源网课平台。汇集AI、短视频、电商、引流等领域的精品课程与实战教程。', en: '知识付费系统搭建,虚拟资源网课平台。汇集AI、短视频、电商、引流等领域的精品课程与实战教程。' },
     features: { zh: ['AI专区 · 短视频 · 电商 · 引流多板块课程', '会员特权 · 精品文章 · 帮助中心', '在线学习 · 虚拟资源 · 知识变现'], en: ['AI专区 · 短视频 · 电商 · 引流多板块课程', '会员特权 · 精品文章 · 帮助中心', '在线学习 · 虚拟资源 · 知识变现'] },
@@ -288,6 +308,25 @@ export const services: ServiceItem[] = [
     sampleImage: null,
     accentRgba: 'rgba(52, 211, 153, 0.55)',
     visitUrl: 'https://poster.pojuai.com/'
+  },
+  {
+    slug: 'news-trend',
+    name: 'News Trend',
+    subtitle: { zh: '新闻趋势 · 热点聚合', en: 'News Trend · Hot Topics' },
+    tagline: {
+      zh: '新闻趋势聚合平台：实时追踪热点新闻，智能分析趋势变化，一站式获取资讯动态。',
+      en: 'News trend aggregation platform: Real-time tracking of hot news, intelligent analysis of trend changes, one-stop access to information.'
+    },
+    features: {
+      zh: ['实时热点追踪 · 智能聚合', '趋势分析 · 数据可视化', '多源资讯 · 一站获取'],
+      en: ['Real-time hot tracking · Smart aggregation', 'Trend analysis · Data visualization', 'Multi-source news · One-stop access']
+    },
+    tags: ['新闻', '趋势', '聚合平台'],
+    emblem: 'relay',
+    demo: 'news-trend',
+    sampleImage: null,
+    accentRgba: 'rgba(56, 189, 248, 0.55)',
+    visitUrl: 'https://news.pojuai.com/'
   }
 ];
 
@@ -309,22 +348,15 @@ export type ServiceEntry =
     };
 
 export const serviceLayout: ServiceEntry[] = [
-  { kind: 'item', slug: 'shiyun' },
-  { kind: 'item', slug: 'ai' },
-  {
-    kind: 'group',
-    id: 'chat-suite',
-    title: { zh: '聊天记录系列', en: '聊天记录系列' },
-    subtitle: { zh: 'QQ · 微信 · 朋友圈 · 既有副业', en: 'QQ · 微信 · 朋友圈 · 既有副业' },
-    emblem: 'suite',
-    accentRgba: 'rgba(167, 139, 250, 0.5)',
-    children: ['echo', 'chronicle', 'fortune', 'continuum', 'archive']
-  },
-  { kind: 'item', slug: 'ming' },
+  { kind: 'item', slug: 'ai-brand-kit' },
+  { kind: 'item', slug: 'logo-design' },
+  { kind: 'item', slug: 'ip-agent' },
+  { kind: 'item', slug: 'ai-design' },
   { kind: 'item', slug: 'pjht' },
   { kind: 'item', slug: 'ai-draw' },
   { kind: 'item', slug: 'dreampix' },
-  { kind: 'item', slug: 'poster-editor' }
+  { kind: 'item', slug: 'poster-editor' },
+  { kind: 'item', slug: 'news-trend' }
 ];
 
 /** slug → ServiceItem, for the layout renderer to resolve entries. */

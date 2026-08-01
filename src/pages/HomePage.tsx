@@ -6,6 +6,13 @@ import { ServicesSection } from '../components/sections/ServicesSection';
 import { ProjectsSection } from '../components/sections/ProjectsSection';
 import { ContactSection } from '../components/sections/ContactSection';
 
+// 分隔线组件
+const SectionDivider = () => (
+  <div className="mx-auto max-w-6xl px-6 md:px-12">
+    <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+  </div>
+);
+
 export const HomePage = () => {
   const { hash } = useLocation();
 
@@ -35,9 +42,13 @@ export const HomePage = () => {
   return (
     <>
       <HeroSection />
+      <SectionDivider />
       <AboutSection />
+      <SectionDivider />
       <ServicesSection />
+      <SectionDivider />
       <ProjectsSection />
+      <SectionDivider />
       <ContactSection />
     </>
   );

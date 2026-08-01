@@ -32,7 +32,7 @@ export const HeroSection = () => {
         <div className="mt-12">
           <a
             href="mailto:422970338@qq.com"
-            className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-text backdrop-blur-md transition-all hover:border-accent/60 hover:bg-white/10 hover:-translate-y-0.5"
+            className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-text backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-accent/60 hover:bg-white/10"
           >
             <span className="absolute inset-0 -z-0 bg-accent-gradient opacity-0 transition-opacity duration-300 group-hover:opacity-30" />
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="relative">

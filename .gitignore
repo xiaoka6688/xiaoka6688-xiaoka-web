@@ -23,3 +23,19 @@ _backup/
 
 # Playwright 测试产物
 .playwright-cli/
+
+# 临时截图脚本
+screenshot*.mjs
+screenshot*.cjs
+
+# 临时文件
+*.timestamp-*.mjs
+
+# base64 文本（大文件）
+logo_base64.txt
+qrcode_base64.txt
+
+# 临时图片
+qrcode.png
+
+.zcode/

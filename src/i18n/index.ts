@@ -65,7 +65,6 @@ const resources = {
           fonts: '字体'
         },
         thanks: {
-          louie: { name: 'Louie', role: '朋友 · louie1.com', note: '是他一直在隔壁折腾自己的小站,把我也卷进来一起做。' },
           gpt: { name: 'GPT · OpenAI', role: '结对编程伙伴', note: '复杂逻辑的拆解、SVG 排版的反复打磨,大量来自和它的对话。' },
           claude: { name: 'Claude · Anthropic', role: 'Claude Code', note: '本仓库的脚手架、React 组件层和大部分文件,直接由 Claude Code 写出。' }
         }
@@ -75,7 +74,7 @@ const resources = {
         bg: '切换背景',
         top: '回到顶部'
       },
-      footer: '用 ♥ 在墨尔本构建'
+      footer: '用 ♥ 在武汉构建'
     }
   },
   en: {
@@ -140,7 +139,6 @@ const resources = {
           fonts: '字体'
         },
         thanks: {
-          louie: { name: 'Louie', role: '朋友 · louie1.com', note: '是他一直在隔壁折腾自己的小站,把我也卷进来一起做。' },
           gpt: { name: 'GPT · OpenAI', role: '结对编程伙伴', note: '复杂逻辑的拆解、SVG 排版的反复打磨,大量来自和它的对话。' },
           claude: { name: 'Claude · Anthropic', role: 'Claude Code', note: '本仓库的脚手架、React 组件层和大部分文件,直接由 Claude Code 写出。' }
         }
@@ -150,7 +148,7 @@ const resources = {
         bg: '切换背景',
         top: '回到顶部'
       },
-      footer: '用 ♥ 在墨尔本构建'
+      footer: '用 ♥ 在武汉构建'
     }
   }
 };

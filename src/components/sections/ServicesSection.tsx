@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from 'react';
+import { useState, useMemo, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -6,9 +6,13 @@ import {
   serviceBySlug,
   type Locale,
   type DemoId,
-  type ServiceItem
+  type ServiceItem,
+  type ServiceEntry
 } from '../../content/services';
-import { SectionLabel } from './SectionLabel';
+import { SectionTitle } from './SectionTitle';
+import { dataService } from '../../services/DataService';
+import { AiDesignDemo } from './services/AiDesignDemo';
+import { NewsTrendDemo } from './services/NewsTrendDemo';
 import { ServiceEmblem } from './services/ServiceEmblems';
 import { ContinuumChat } from './services/ContinuumChat';
 import { EchoDemo } from './services/EchoDemo';
@@ -22,6 +26,9 @@ import { PjhtDemo } from './services/PjhtDemo';
 import { AiDrawDemo } from './services/AiDrawDemo';
 import { DreampixDemo } from './services/DreampixDemo';
 import { PosterDemo } from './services/PosterDemo';
+import { BrandKitDemo } from './services/BrandKitDemo';
+import { LogoDesignDemo } from './services/LogoDesignDemo';
+import { IpAgentDemo } from './services/IpAgentDemo';
 import { ImageLightbox } from './services/ImageLightbox';
 
 // Services sits between About and Projects in the page rhythm, but its visual
@@ -48,7 +55,12 @@ const DEMO_REGISTRY: Record<DemoId, () => JSX.Element> = {
   pjht: PjhtDemo,
   'ai-draw': AiDrawDemo,
   dreampix: DreampixDemo,
-  'poster-editor': PosterDemo
+  'poster-editor': PosterDemo,
+  'brand-kit': BrandKitDemo,
+  'logo-design': LogoDesignDemo,
+  'ip-agent': IpAgentDemo,
+  'ai-design': AiDesignDemo,
+  'news-trend': NewsTrendDemo
 };
 
 interface RowProps {
@@ -223,6 +235,58 @@ export const ServicesSection = () => {
   // A 整蛊 / prank product is hidden entirely when the UI is in English.
   const isHidden = (s: ServiceItem) => locale === 'en' && Boolean(s.prank);
 
+  // 合并静态数据和自定义数据
+  const allServiceLayout = useMemo(() => {
+    const customServices = dataService.getServices();
+
+    // 如果没有自定义数据，使用默认布局
+    if (customServices.length === 0) {
+      return serviceLayout;
+    }
+
+    // 将自定义服务转换为 ServiceItem 格式
+    const customServiceItems: ServiceItem[] = customServices
+      .filter((s) => s.visible)
+      .sort((a, b) => a.order - b.order)
+      .map((s) => ({
+        slug: s.slug,
+        name: s.name,
+        subtitle: { zh: s.subtitle, en: s.subtitle },
+        tagline: { zh: s.tagline, en: s.tagline },
+        features: { zh: s.features, en: s.features },
+        tags: s.tags,
+        emblem: 'relay' as const,
+        demo: 'relay' as DemoId,
+        sampleImage: null,
+        accentRgba: 'rgba(167, 139, 250, 0.55)',
+        visitUrl: s.visitUrl,
+      }));
+
+    // 添加到 serviceBySlug
+    customServiceItems.forEach((s) => {
+      if (!serviceBySlug[s.slug]) {
+        serviceBySlug[s.slug] = s;
+      }
+    });
+
+    // 合并布局：自定义服务在前，默认布局在后
+    const customEntries: ServiceEntry[] = customServiceItems.map((s) => ({
+      kind: 'item' as const,
+      slug: s.slug,
+    }));
+
+    // 过滤掉重复的默认服务
+    const customSlugs = new Set(customServiceItems.map((s) => s.slug));
+    const filteredDefaults = serviceLayout.filter((entry) => {
+      if (entry.kind === 'item') {
+        return !customSlugs.has(entry.slug);
+      }
+      return true;
+    });
+
+    return [...customEntries, ...filteredDefaults];
+  }, []);
+
   // Which demo row is open. null = all collapsed. Only one open at a time so the
   // section stays compact — shared across top-level rows and nested children.
   const [openSlug, setOpenSlug] = useState<string | null>(null);
@@ -256,15 +320,13 @@ export const ServicesSection = () => {
   );
 
   return (
-    <section id="services" className="mx-auto max-w-4xl px-6 py-14 md:px-12 md:py-16 scroll-mt-28">
-      <SectionLabel number="">
-        <span className="text-xl font-bold text-text md:text-2xl">{t('section.services')}</span>
-      </SectionLabel>
-
-      <p className="mb-8 max-w-2xl text-sm leading-relaxed text-text/60">{t('services.intro')}</p>
+    <section id="services" className="mx-auto max-w-4xl px-6 py-16 md:px-12 md:py-20 scroll-mt-28">
+      <SectionTitle subtitle={t('services.intro')}>
+        {t('section.services')}
+      </SectionTitle>
 
       <ul className="divide-y divide-white/5 overflow-hidden rounded-2xl border border-white/8 bg-surface/30 backdrop-blur-sm">
-        {serviceLayout.map((entry) => {
+        {allServiceLayout.map((entry) => {
           if (entry.kind === 'item') {
             const s = serviceBySlug[entry.slug];
             return s && !isHidden(s) ? renderRow(s) : null;

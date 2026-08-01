@@ -26,7 +26,8 @@ const ENTRIES: BgEntry[] = [
   { id: 'beams', weight: 'heavy', render: () => <Beams beamWidth={2} beamHeight={20} beamNumber={10} lightColor="#A78BFA" speed={1.6} noiseIntensity={1.2} scale={0.2} rotation={45} /> }
 ];
 
-const STORAGE_KEY = 'cohen.lastBg';
+const STORAGE_KEY = 'xiaoka.lastBg';
+const DEFAULT_BG = 'aurora';
 const FADE_MS = 600;
 const LIGHT_BACKGROUNDS = new Set(['aurora', 'grainient', 'colorbends']);
 
@@ -80,7 +81,12 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
 
   const initial = useMemo(() => {
     const last = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null;
-    return pickRandom(pool, last ?? undefined);
+    // 如果有上次保存的背景就用它，否则用默认背景（不随机）
+    if (last) {
+      const found = pool.find((e) => e.id === last);
+      if (found) return found;
+    }
+    return pool.find((e) => e.id === DEFAULT_BG) ?? pool[0];
   }, [pool]);
 
   // Two layers: render both, fade the active one in and the other one out. When the

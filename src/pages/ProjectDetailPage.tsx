@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Magnet from '../components/reactbits/Animations/Magnet/Magnet';
 import StarBorder from '../components/reactbits/Animations/StarBorder/StarBorder';
 import { getProjectBySlug, type Locale } from '../content/projects';
+import { useProjectImage } from '../utils/projectImage';
 
 const Placeholder = ({ label }: { label: string }) => (
   <div className="flex aspect-video w-full items-center justify-center rounded-2xl border border-dashed border-white/10 bg-surface/40 text-sm text-muted">
@@ -11,25 +12,39 @@ const Placeholder = ({ label }: { label: string }) => (
   </div>
 );
 
+const LoadingImage = () => (
+  <div className="flex aspect-video w-full items-center justify-center rounded-2xl border border-white/5 bg-surface/30 text-sm text-muted/50">
+    <span className="font-mono tracking-wide">加载中...</span>
+  </div>
+);
+
+/**
+ * 智能图片组件：自动适配 .png / .jpg / .svg 等扩展名。
+ * 放在 public/projects/{slug}/ 目录下同名图片即可自动加载。
+ */
 const SmartImage = ({
-  src,
+  slug,
+  name,
   alt,
   fallbackLabel,
   className
 }: {
-  src: string;
+  slug: string;
+  name: string;
   alt: string;
   fallbackLabel: string;
   className?: string;
 }) => {
-  const [failed, setFailed] = useState(false);
-  if (failed) return <Placeholder label={fallbackLabel} />;
+  const { loading, src, failed } = useProjectImage(slug, name);
+
+  if (loading) return <LoadingImage />;
+  if (failed || !src) return <Placeholder label={fallbackLabel} />;
+
   return (
     <img
       src={src}
       alt={alt}
       loading="lazy"
-      onError={() => setFailed(true)}
       className={className}
     />
   );
@@ -68,7 +83,7 @@ export const ProjectDetailPage = () => {
 
   return (
     <article className="relative mx-auto max-w-5xl px-6 pb-32 pt-32 md:px-12">
-      {/* Back button — magnetic on hover */}
+      {/* Back button */}
       <div className="mb-12">
         <Magnet padding={80} magnetStrength={3} wrapperClassName="inline-block">
           <Link
@@ -120,25 +135,26 @@ export const ProjectDetailPage = () => {
               thickness={2}
               className="inline-flex items-center gap-2 bg-bg/80 px-5 py-3 text-sm font-bold text-text backdrop-blur"
             >
-              {t('project.liveDemo')} →
+              {t('project.liveDemo')} -&gt;
             </StarBorder>
           )}
         </div>
       </header>
 
-      {/* Hero image */}
+      {/* Hero image - 自动适配扩展名 */}
       <section className="mb-24">
         <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-surface/40 shadow-2xl">
-          <img
-            src={project.heroImage}
+          <SmartImage
+            slug={project.slug}
+            name="hero"
             alt={`${project.name} hero screenshot`}
-            loading="eager"
+            fallbackLabel={t('project.screenshotComingSoon')}
             className="block h-auto w-full object-contain"
           />
         </div>
       </section>
 
-      {/* Features — alternating */}
+      {/* Features */}
       <section className="mb-24">
         <h2 className="mb-12 font-mono text-sm uppercase tracking-[0.18em] text-accent [&:lang(zh)]:tracking-normal">
           {t('project.features')}
@@ -153,7 +169,8 @@ export const ProjectDetailPage = () => {
             >
               <div>
                 <SmartImage
-                  src={feature.image}
+                  slug={project.slug}
+                  name={`feature-${i + 1}`}
                   alt={feature.title[locale]}
                   fallbackLabel={t('project.screenshotComingSoon')}
                   className="w-full rounded-2xl border border-white/10 bg-surface/40 object-contain shadow-2xl"
