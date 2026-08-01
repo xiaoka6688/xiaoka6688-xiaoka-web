@@ -19,6 +19,7 @@ import * as THREE from 'three';
 import cardGLB from './card.glb';
 import lanyard from './lanyard.png';
 import { defaultCardConfig, buildCardSVG, type CardConfig } from './cardConfig';
+import { publicAsset } from '../../../../utils/publicAsset';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -142,21 +143,58 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false, cardConfig = defa
   const cardTexture = useMemo(() => new THREE.Texture(), []);
 
   useEffect(() => {
-    const svg = buildCardSVG(cardConfig);
-    const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-    const img = new Image();
-    img.onload = () => {
-      cardTexture.image = img;
-      cardTexture.flipY = false;
-      cardTexture.colorSpace = THREE.SRGBColorSpace;
-      cardTexture.wrapS = cardTexture.wrapT = THREE.ClampToEdgeWrapping;
-      cardTexture.generateMipmaps = false;
-      cardTexture.minFilter = THREE.LinearFilter;
-      cardTexture.magFilter = THREE.LinearFilter;
-      cardTexture.anisotropy = 16;
-      cardTexture.needsUpdate = true;
+    let cancelled = false;
+
+    /**
+     * SVG 以 data: URL 方式加载时，浏览器出于安全限制不会加载 SVG 内部引用的外部资源。
+     * 因此需要先把 avatar 图片转为 data URL 嵌入 SVG，使 SVG 完全自包含。
+     */
+    const buildAndLoad = (resolvedAvatar: string) => {
+      const config = { ...cardConfig, avatar: resolvedAvatar };
+      const svg = buildCardSVG(config);
+      const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+      const img = new Image();
+      img.onload = () => {
+        if (cancelled) return;
+        cardTexture.image = img;
+        cardTexture.flipY = false;
+        cardTexture.colorSpace = THREE.SRGBColorSpace;
+        cardTexture.wrapS = cardTexture.wrapT = THREE.ClampToEdgeWrapping;
+        cardTexture.generateMipmaps = false;
+        cardTexture.minFilter = THREE.LinearFilter;
+        cardTexture.magFilter = THREE.LinearFilter;
+        cardTexture.anisotropy = 16;
+        cardTexture.needsUpdate = true;
+      };
+      img.src = url;
     };
-    img.src = url;
+
+    const avatar = cardConfig.avatar;
+    if (avatar && !avatar.startsWith('data:')) {
+      // avatar 是文件路径，需要转为 data URL 才能在 SVG data URL 中使用
+      const assetUrl = publicAsset(avatar);
+      fetch(assetUrl)
+        .then((res) => res.blob())
+        .then((blob) => {
+          if (cancelled) return;
+          const reader = new FileReader();
+          reader.onload = () => {
+            if (cancelled) return;
+            buildAndLoad(reader.result as string);
+          };
+          reader.readAsDataURL(blob);
+        })
+        .catch(() => {
+          if (!cancelled) buildAndLoad(''); // 加载失败则显示占位人像
+        });
+    } else {
+      // avatar 已经是 data URL 或为空
+      buildAndLoad(avatar);
+    }
+
+    return () => {
+      cancelled = true;
+    };
   }, [cardConfig, cardTexture]);
   const [curve] = useState(
     () =>
