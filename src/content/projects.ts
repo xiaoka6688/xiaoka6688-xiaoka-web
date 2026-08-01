@@ -50,7 +50,7 @@ export const projects: ProjectDetail[] = [
     tags: ['SVG', '品牌设计', 'AI生成', 'WorkBuddy'],
     githubUrl: 'https://github.com/xiaoka6688/AI-Brand-Kit-Skill',
     liveUrl: 'https://xiaoka6688.github.io/AI-Brand-Kit-Skill/',
-    heroImage: '/projects/ai-brand-kit/hero.svg',
+    heroImage: '/projects/ai-brand-kit/hero.png',
     features: [
       {
         title: { zh: 'Logo家族生成', en: 'Logo Family Generation' },
@@ -58,7 +58,7 @@ export const projects: ProjectDetail[] = [
           zh: '从参考图提取设计语言，自动生成适配不同场景的Logo变体家族，包括主Logo、图标、水印等多种形态。',
           en: 'Extract design language from reference images and automatically generate Logo variant families adapted to different scenarios, including main logos, icons, watermarks, and more.'
         },
-        image: '/projects/ai-brand-kit/feature-1.svg'
+        image: '/projects/ai-brand-kit/feature-1.png'
       },
       {
         title: { zh: '头像与社交封面', en: 'Avatars & Social Covers' },
@@ -66,7 +66,7 @@ export const projects: ProjectDetail[] = [
           zh: '一键生成真人头像家族、动态头像，以及适配各社交平台的封面图，保持品牌视觉一致性。',
           en: 'One-click generation of portrait avatar families, dynamic avatars, and cover images adapted to various social platforms, maintaining brand visual consistency.'
         },
-        image: '/projects/ai-brand-kit/feature-2.svg'
+        image: '/projects/ai-brand-kit/feature-2.png'
       },
       {
         title: { zh: '多格式资产输出', en: 'Multi-format Asset Output' },
@@ -74,7 +74,7 @@ export const projects: ProjectDetail[] = [
           zh: '输出SVG源文件确保无限缩放，同时提供多尺寸PNG、单页应用展示页和ZIP打包下载。',
           en: 'Outputs SVG source files for infinite scaling, while providing multi-size PNGs, single-page application showcase, and ZIP package downloads.'
         },
-        image: '/projects/ai-brand-kit/feature-3.svg'
+        image: '/projects/ai-brand-kit/feature-3.png'
       },
       {
         title: { zh: '品牌规范文档', en: 'Brand Guidelines' },
@@ -82,7 +82,7 @@ export const projects: ProjectDetail[] = [
           zh: '自动生成品牌使用规范文档，包含色彩体系、字体搭配、Logo使用规则等，方便团队协作。',
           en: 'Automatically generates brand usage guidelines documents, including color systems, font pairings, logo usage rules, etc., for easy team collaboration.'
         },
-        image: '/projects/ai-brand-kit/feature-4.svg'
+        image: '/projects/ai-brand-kit/feature-4.png'
       }
     ],
     techStack: ['SVG', 'HTML', 'CSS', 'JavaScript', 'WorkBuddy']
@@ -109,7 +109,7 @@ export const projects: ProjectDetail[] = [
           zh: '输入品牌名，自定义背景色、字号等参数，即时生成文字Logo。免费功能，无需API支持。',
           en: 'Enter brand name, customize background color, font size and other parameters to instantly generate text Logo. Free feature, no API needed.'
         },
-        image: '/projects/logo-design/template-1.png'
+        image: '/projects/logo-design/feature-1.png'
       },
       {
         title: { zh: '图标多平台适配', en: 'Multi-platform Icon Adaptation' },
@@ -117,7 +117,7 @@ export const projects: ProjectDetail[] = [
           zh: '上传已有Logo图片，系统自动为不同设备和平台生成合适尺寸的图标，保持视觉一致性。',
           en: 'Upload existing Logo images, the system automatically generates appropriately sized icons for different devices and platforms, maintaining visual consistency.'
         },
-        image: '/projects/logo-design/template-2.png'
+        image: '/projects/logo-design/feature-2.png'
       },
       {
         title: { zh: 'AI从零设计', en: 'AI Design from Scratch' },
@@ -125,7 +125,7 @@ export const projects: ProjectDetail[] = [
           zh: '通过描述品牌和风格，AI从零设计Logo。需要API支持，可生成独特的品牌标识。',
           en: 'Describe brand and style, AI designs Logo from scratch. Requires API support, can generate unique brand identities.'
         },
-        image: '/projects/logo-design/template-3.png'
+        image: '/projects/logo-design/feature-3.png'
       },
       {
         title: { zh: '风格重绘', en: 'Style Redraw' },
@@ -133,7 +133,7 @@ export const projects: ProjectDetail[] = [
           zh: '上传参考图，AI将其重绘为新的风格。支持多种风格转换，满足不同设计需求。',
           en: 'Upload reference images, AI redraws them in new styles. Supports multiple style conversions to meet different design needs.'
         },
-        image: '/projects/logo-design/template-4.png'
+        image: '/projects/logo-design/feature-4.png'
       }
     ],
     techStack: ['HTML', 'JavaScript', 'CSS', 'Canvas', 'API']
@@ -388,7 +388,7 @@ export const projects: ProjectDetail[] = [
     },
     tags: ['知识付费', '在线教育', 'AI创业', '电商'],
     liveUrl: 'https://pjht.jsxf8.cn',
-    heroImage: '/projects/pjht/banner.png',
+    heroImage: '/projects/pjht/hero.png',
     features: [
       {
         title: { zh: '课程分类导航', en: '课程分类导航' },
