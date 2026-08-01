@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/xiaoka6688-xiaoka-web/' : '/',
+export default defineConfig({
+  base: '/',
   plugins: [react()],
   assetsInclude: ['**/*.glb'],
   build: {
@@ -19,4 +19,4 @@ export default defineConfig(({ command }) => ({
       }
     }
   }
-}));
+});
