@@ -11,6 +11,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-i18next', 'i18next'],
           'r3f': ['@react-three/fiber', '@react-three/drei', '@react-three/rapier', 'three', 'meshline'],
           'gsap': ['gsap', '@gsap/react'],
           'ogl': ['ogl'],
