@@ -102,7 +102,9 @@ void main() {
   float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
   
   vec3 auroraColor = intensity * rampColor;
-  
+  // Reinhard-ish tonemapping to prevent highlight blowout (white spots)
+  auroraColor = auroraColor / (auroraColor + vec3(0.35));
+
   fragColor = vec4(auroraColor * auroraAlpha, auroraAlpha);
 }
 `;
@@ -176,6 +178,9 @@ export default function Aurora(props: AuroraProps) {
     ctn.appendChild(gl.canvas);
 
     let animateId = 0;
+    // Cache parsed colors to avoid re-parsing hex strings every frame
+    let cachedStopsRef: string[] | null = null;
+    let cachedStopsArr: number[][] = colorStopsArray;
     const update = (t: number) => {
       animateId = requestAnimationFrame(update);
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
@@ -183,11 +188,16 @@ export default function Aurora(props: AuroraProps) {
         program.uniforms.uTime.value = time * speed * 0.1;
         program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
         program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+        // Only re-parse colors if the array reference changed
         const stops = propsRef.current.colorStops ?? colorStops;
-        program.uniforms.uColorStops.value = stops.map((hex: string) => {
-          const c = new Color(hex);
-          return [c.r, c.g, c.b];
-        });
+        if (stops !== cachedStopsRef) {
+          cachedStopsRef = stops;
+          cachedStopsArr = stops.map((hex: string) => {
+            const c = new Color(hex);
+            return [c.r, c.g, c.b];
+          });
+        }
+        program.uniforms.uColorStops.value = cachedStopsArr;
         renderer.render({ scene: mesh });
       }
     };

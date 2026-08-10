@@ -82,9 +82,6 @@ const getGlowByType = (type: string): string => {
       return 'rgba(34, 211, 238, 0.35)';
     case 'wechat':
       return 'rgba(7, 193, 96, 0.35)';
-      return 'rgba(29, 161, 242, 0.35)';
-    case 'wechat':
-      return 'rgba(7, 193, 96, 0.35)';
     default:
       return 'rgba(198, 255, 62, 0.35)';
   }

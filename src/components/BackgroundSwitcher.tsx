@@ -17,7 +17,7 @@ interface BgEntry {
 }
 
 const ENTRIES: BgEntry[] = [
-  { id: 'aurora', weight: 'light', render: () => <Aurora colorStops={['#7C3AED', '#22D3EE', '#FF50AA']} amplitude={1.1} blend={0.55} /> },
+  { id: 'aurora', weight: 'light', render: () => <Aurora colorStops={['#FF006E', '#FFBE0B', '#3A86FF']} amplitude={0.9} blend={0.5} /> },
   { id: 'grainient', weight: 'light', render: () => <Grainient /> },
   { id: 'colorbends', weight: 'light', render: () => <ColorBends /> },
   { id: 'prism', weight: 'heavy', render: () => <Prism animationType="3drotate" timeScale={0.3} glow={1.0} bloom={0.7} /> },
