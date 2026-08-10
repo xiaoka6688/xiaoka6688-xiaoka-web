@@ -27,6 +27,8 @@ const ENTRIES: BgEntry[] = [
 ];
 
 const STORAGE_KEY = 'xiaoka.lastBg';
+const VERSION_KEY = 'xiaoka.bgVersion';
+const CURRENT_VERSION = '2';
 const DEFAULT_BG = 'grainient';
 const FADE_MS = 600;
 const LIGHT_BACKGROUNDS = new Set(['aurora', 'grainient', 'colorbends']);
@@ -85,6 +87,12 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
       const oldKey = window.localStorage.getItem('cohen.lastBg');
       if (oldKey) {
         window.localStorage.removeItem('cohen.lastBg');
+      }
+      // 版本迁移：版本号不匹配时清除旧背景偏好，强制使用默认背景
+      const version = window.localStorage.getItem(VERSION_KEY);
+      if (version !== CURRENT_VERSION) {
+        window.localStorage.removeItem(STORAGE_KEY);
+        window.localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
       }
     }
 
