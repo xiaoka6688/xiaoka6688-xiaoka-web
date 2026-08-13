@@ -38,10 +38,21 @@ html[data-bg-tone='light'] {
 }
 
 html[data-bg-tone='dark'] {
+  --color-bg: 8 10 16;
+  --color-surface: 14 16 22;
+  --color-border: 42 44 54;
   --color-text: 245 247 252;
-  --color-muted: 183 190 206;
+  --color-muted: 215 220 230;
   --color-accent: 125 211 252;
   --color-accent-2: 167 139 250;
+}
+
+/* Legibility boost for muted text on colorful dark-tone backgrounds (iridescence /
+   prism / silk / beams): a subtle dark text-shadow adds edge contrast without
+   dimming the background. Matches text-muted and its alpha variants (text-muted/50
+   etc). Primary text and the gradient hero title are unaffected. */
+html[data-bg-tone='dark'] [class*='text-muted'] {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 html[data-bg-current='aurora'] {

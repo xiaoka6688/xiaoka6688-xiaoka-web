@@ -157,9 +157,10 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
     document.documentElement.dataset.bgTone = tone;
   }, [current, tone]);
 
-  // FPS watchdog: if the active heavy background sustains <28fps for ~2.5s, fall
-  // back to a light background. Browsers throttle rAF when the tab is hidden, so
-  // we skip sampling while document.hidden is true.
+  // FPS watchdog: if the active heavy background sustains <15fps for ~10s, fall
+  // back to a light background. Thresholds are deliberately lenient so the default
+  // iridescence background is not auto-rotated away under normal load. Browsers
+  // throttle rAF when the tab is hidden, so we skip sampling while document.hidden.
   useEffect(() => {
     if (reduced) return;
     const currentEntry = ENTRIES.find((e) => e.id === current);
@@ -174,9 +175,9 @@ export const BackgroundProvider = ({ children }: { children: ReactNode }) => {
       if (cancelled) return;
       if (!document.hidden) {
         const dt = t - lastT;
-        if (dt > 36) slowFrames++;
+        if (dt > 66) slowFrames++;
         else slowFrames = Math.max(0, slowFrames - 1);
-        if (slowFrames > 60) {
+        if (slowFrames > 150) {
           const lightPool = ENTRIES.filter((e) => e.weight === 'light' && e.id !== current);
           if (lightPool.length > 0) {
             const fallback = lightPool[Math.floor(Math.random() * lightPool.length)];
