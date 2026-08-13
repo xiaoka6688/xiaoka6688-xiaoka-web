@@ -13,7 +13,7 @@ const resources = {
         contact: '联系'
       },
       hero: {
-        greeting: '你好，我是小卡',
+        greeting: 'AI 实战项目集',
         cta: '发送邮件联系',
         name: "你好，我是小卡"
       },
@@ -87,7 +87,7 @@ const resources = {
         contact: '联系'
       },
       hero: {
-        greeting: '你好，我是小卡',
+        greeting: 'AI 实战项目集',
         cta: '发送邮件联系',
         name: "你好，我是小卡"
       },
