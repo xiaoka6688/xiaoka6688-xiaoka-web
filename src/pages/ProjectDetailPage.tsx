@@ -5,6 +5,7 @@ import Magnet from '../components/reactbits/Animations/Magnet/Magnet';
 import StarBorder from '../components/reactbits/Animations/StarBorder/StarBorder';
 import { getProjectBySlug, type Locale } from '../content/projects';
 import { useProjectImage } from '../utils/projectImage';
+import { ImageLightbox } from '../components/sections/services/ImageLightbox';
 
 const Placeholder = ({ label }: { label: string }) => (
   <div className="flex aspect-video w-full items-center justify-center rounded-2xl border border-dashed border-white/10 bg-surface/40 text-sm text-muted">
@@ -74,6 +75,7 @@ export const ProjectDetailPage = () => {
   const { t, i18n } = useTranslation();
   const locale = (i18n.language.startsWith('zh') ? 'zh' : 'en') as Locale;
   const project = slug ? getProjectBySlug(slug) : undefined;
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -167,7 +169,22 @@ export const ProjectDetailPage = () => {
                 i % 2 === 1 ? 'md:[&>div:first-child]:order-2' : ''
               }`}
             >
-              <div>
+              <div
+                onClick={(e) => {
+                  const img = (e.currentTarget as HTMLElement).querySelector('img');
+                  if (img) setLightbox({ src: img.src, alt: feature.title[locale] });
+                }}
+                className="group/img relative cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const img = (e.currentTarget as HTMLElement).querySelector('img');
+                    if (img) setLightbox({ src: img.src, alt: feature.title[locale] });
+                  }
+                }}
+              >
                 <SmartImage
                   slug={project.slug}
                   name={`feature-${i + 1}`}
@@ -175,6 +192,15 @@ export const ProjectDetailPage = () => {
                   fallbackLabel={t('project.screenshotComingSoon')}
                   className="w-full rounded-2xl border border-white/10 bg-surface/40 object-contain shadow-2xl"
                 />
+                <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1.5 text-xs font-medium text-white/90 opacity-0 backdrop-blur-sm transition-opacity duration-200 group-hover/img:opacity-100">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M15 3h6v6" />
+                    <path d="M9 21H3v-6" />
+                    <path d="M21 3l-7 7" />
+                    <path d="M3 21l7-7" />
+                  </svg>
+                  {locale === 'zh' ? '点击查看大图' : 'Click to zoom'}
+                </span>
               </div>
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent2">
@@ -206,6 +232,10 @@ export const ProjectDetailPage = () => {
           ))}
         </div>
       </section>
+
+      {lightbox && (
+        <ImageLightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+      )}
     </article>
   );
 };
