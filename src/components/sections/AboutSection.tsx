@@ -34,7 +34,7 @@ export const AboutSection = () => {
   const locale = (i18n.language.startsWith('zh') ? 'zh' : 'en') as Locale;
 
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 pt-32 pb-12 md:px-12 md:pt-40 md:pb-20">
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-28 px-6 pt-32 pb-12 md:px-12 md:pt-28 md:pb-20">
       {/* 标题 */}
       <div className="mb-8">
         <TrueFocus
@@ -62,7 +62,7 @@ export const AboutSection = () => {
         {highlights.map((item) => (
           <div
             key={item.title}
-            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-surface/50 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface/70"
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-surface/50 p-5 backdrop-blur-md transition-all duration-300 hover:border-accent/40 hover:bg-surface/70"
           >
             {/* 背景光晕 */}
             <div className="pointer-events-none absolute -top-8 -right-8 h-24 w-24 rounded-full bg-accent/10 blur-2xl transition-all duration-500 group-hover:bg-accent/20 group-hover:scale-150" />

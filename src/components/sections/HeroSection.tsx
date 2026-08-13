@@ -10,9 +10,9 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col justify-center px-6 pt-32 md:px-12"
+      className="relative flex min-h-screen flex-col justify-center px-6 pt-32 pb-16 md:px-12"
     >
-      <div className="relative z-10 mx-auto w-full max-w-5xl">
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <p className="mb-6 inline-flex items-center gap-2 text-base uppercase tracking-[0.24em] text-accent/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.45)]">
           {t('hero.greeting')}
         </p>
