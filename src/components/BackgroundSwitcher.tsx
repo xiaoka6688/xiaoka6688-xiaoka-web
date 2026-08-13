@@ -29,7 +29,7 @@ const ENTRIES: BgEntry[] = [
 const STORAGE_KEY = 'xiaoka.lastBg';
 const VERSION_KEY = 'xiaoka.bgVersion';
 const CURRENT_VERSION = '2';
-const DEFAULT_BG = 'grainient';
+const DEFAULT_BG = 'iridescence';
 const FADE_MS = 600;
 const LIGHT_BACKGROUNDS = new Set(['aurora', 'grainient', 'colorbends']);
 
