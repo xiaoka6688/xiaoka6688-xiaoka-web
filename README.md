@@ -128,9 +128,9 @@ xiaoka-web/
 - 默认背景为浅色 `#f5f7fc`，防止加载瞬间黑屏。
 
 ### 增删背景
-- 背景列表在 `src/components/BackgroundSwitcher.tsx` 的 `ENTRIES` 数组，每项含 `id`、`weight`（`light` / `heavy`）和 `render`。默认背景为 `grainient`。
+- 背景列表在 `src/components/BackgroundSwitcher.tsx` 的 `ENTRIES` 数组，每项含 `id`、`weight`（`light` / `heavy`）和 `render`。默认背景为 `iridescence`。
 - 轻量级背景（aurora、grainient、colorbends）全设备可用；重量级背景（prism、silk、iridescence、beams）仅桌面 4 核以上进入随机池。
-- 版本迁移机制：`xiaoka.bgVersion` 不匹配时清除旧 localStorage 偏好，确保新老访客看到默认背景。
+- 版本迁移机制：`xiaoka.bgVersion`（当前 v3）不匹配时清除旧 localStorage 偏好，确保新老访客看到默认虹彩背景。
 
 ---
 
@@ -169,7 +169,8 @@ xiaoka-web/
 
 - **移动端性能**：已通过代码分割优化，初始加载 504KB（gzip 152KB）；3D 模型文件（2.4MB）按需加载，慢网络下交互可能延迟。
 - **Favicon**：全套适配（浏览器标签页、Windows 任务栏、iOS/Android 主屏幕、PWA），源图为 `public/logo.png`（1024×1024）。
-- **背景**：默认 grainient，7 种可切换；重量级背景仅桌面 4 核以上可用。
+- **背景**：默认 iridescence 虹彩，7 种可切换；重量级背景仅桌面 4 核以上可用；dark tone 下文字已优化对比度。
+- **项目详情页 feature 图**：支持点击打开 lightbox 查看原尺寸大图（ESC/点遮罩关闭）。
 - `SiteDock` / `Footer` 组件保留但未挂载（如需恢复可自行在 `App.tsx` / `HomePage.tsx` 引入）。
 - 本地预览（无头浏览器）对 WebGL 背景有帧率限制，截图可能偏慢，属工具限制而非线上问题。
 
