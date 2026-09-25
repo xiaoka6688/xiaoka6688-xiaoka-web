@@ -23,6 +23,7 @@ import { RelayDemo } from './services/RelayDemo';
 import { BaziDemo } from './services/BaziDemo';
 import { PoetryCloudDemo } from './services/PoetryCloudDemo';
 import { PjhtDemo } from './services/PjhtDemo';
+import { PojuAiDemo } from './services/PojuAiDemo';
 import { AiDrawDemo } from './services/AiDrawDemo';
 import { DreampixDemo } from './services/DreampixDemo';
 import { PosterDemo } from './services/PosterDemo';
@@ -54,6 +55,7 @@ const DEMO_REGISTRY: Record<DemoId, () => JSX.Element> = {
   bazi: BaziDemo,
   poetry: PoetryCloudDemo,
   pjht: PjhtDemo,
+  'poju-ai': PojuAiDemo,
   'ai-draw': AiDrawDemo,
   dreampix: DreampixDemo,
   'poster-editor': PosterDemo,

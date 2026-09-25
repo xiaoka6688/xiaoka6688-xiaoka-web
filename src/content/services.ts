@@ -13,6 +13,7 @@ export type DemoId =
   | 'bazi'
   | 'poetry'
   | 'pjht'
+  | 'poju-ai'
   | 'ai-draw'
   | 'dreampix'
   | 'poster-editor'
@@ -158,6 +159,25 @@ export const services: ServiceItem[] = [
     visitUrl: 'https://pjht.jsxf8.cn'
   },
   {
+    slug: 'poju-ai',
+    name: '破局AI项目圈·资源站',
+    subtitle: { zh: '社区数据 · 可视化看板', en: 'Community Data · Visual Dashboard' },
+    tagline: {
+      zh: 'AI项目社区数据聚合分析平台，11大板块：赛道/平台热度榜、赛道×平台矩阵、城市活跃度、点赞/作者榜、AI洞察与风向标、精华待分发池。',
+      en: 'AI community analytics platform with 11 modules: track/platform heat charts, cross heatmap, city activity, leaderboards, AI insights & trends, and a featured content pool.'
+    },
+    features: {
+      zh: ['13赛道 × 9平台热度榜与热力矩阵', '城市活跃度 · 点赞榜 · 作者榜 · 每日AI风向标', '4139+条精华池 · 城市匹配自动生成飞书分发文案'],
+      en: ['13-track × 9-platform heat charts & cross heatmap', 'City activity · like & author boards · daily AI trends', '4,139+ featured pool · auto Feishu copy by city matching']
+    },
+    tags: ['数据可视化', '社区分析', 'ECharts'],
+    emblem: 'chronicle',
+    demo: 'poju-ai',
+    sampleImage: null,
+    accentRgba: 'rgba(251, 113, 133, 0.55)',
+    visitUrl: 'https://xmq.pojuai.com/'
+  },
+  {
     slug: 'ai-draw',
     name: '小卡AI绘图',
     subtitle: { zh: 'AI绘图 · 国内可用', en: 'AI绘图 · 国内可用' },
@@ -258,6 +278,7 @@ export const serviceLayout: ServiceEntry[] = [
   { kind: 'item', slug: 'ip-agent' },
   { kind: 'item', slug: 'ai-design' },
   { kind: 'item', slug: 'pjht' },
+  { kind: 'item', slug: 'poju-ai' },
   { kind: 'item', slug: 'ai-draw' },
   { kind: 'item', slug: 'dreampix' },
   { kind: 'item', slug: 'poster-editor' },

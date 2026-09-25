@@ -40,4 +40,7 @@ qrcode.png
 
 .zcode/
 
+# 本地缓存（截图脚本用的 echarts 镜像等）
+.cache/
+
 .vercel

@@ -414,6 +414,73 @@ export const projects: ProjectDetail[] = [
     techStack: ['PHP', 'MySQL', 'Vue.js', 'Node.js']
   },
   {
+    slug: 'poju-ai',
+    name: '破局AI项目圈·资源站',
+    tagline: {
+      zh: 'AI项目社区数据看板：赛道热度、平台分发、城市活跃度、点赞榜单、AI风向标一站式可视化分析。',
+      en: 'AI project community data dashboard: track heat, platform distribution, city activity, like rankings, and daily AI trend reports in one visual analytics hub.'
+    },
+    description: {
+      zh: '破局AI项目圈·资源站是一个面向AI创业社区的数据聚合与可视化分析平台，聚合3591+条AI项目帖、835篇精华帖、4139条待分发内容，覆盖52个城市、379位高关联圈友。全站11大分析板块：13条AI赛道热度榜、9大平台内容分发榜、13×9赛道平台热力矩阵、Top20城市活跃度分布、圈友城市关联度排行、文章点赞榜Top100、作者发帖榜、AI洞察深度文章、AI风向标每日快报、精华内容待分发池（按作者城市匹配自动生成飞书分发文案）与城市总览联动筛选，全程带飞书复盘内容优先展示。',
+      en: '破局AI项目圈·资源站 (xmq.pojuai.com) is a data aggregation and visual analytics platform for an AI entrepreneurship community, aggregating 3,591+ AI project posts, 835 featured posts, and 4,139 pending-distribution items across 52 cities and 379 highly connected members. It packs 11 analysis modules: a 13-track heat ranking, 9-platform distribution charts, a 13x9 track-platform heatmap, Top-20 city activity charts, member-city affinity rankings, a Top-100 article like leaderboard, author posting boards, AI deep-dive insights, daily AI trend briefings, a featured-content pool that auto-generates Feishu distribution copy by author-city matching, and a city-overview filter. Posts with Feishu retrospective docs are prioritized throughout.'
+    },
+    tags: ['数据可视化', '社区分析', 'AI创业', 'ECharts'],
+    githubUrl: 'https://github.com/xiaoka6688/poju-AI',
+    liveUrl: 'https://xmq.pojuai.com/',
+    heroImage: '/projects/poju-ai/hero.png',
+    features: [
+      {
+        title: { zh: '赛道与平台双榜', en: 'Track & Platform Charts' },
+        description: {
+          zh: '13条AI赛道（AI编程、AI工具、AI智能体、AI写作等）与9大平台（小红书、公众号、抖音、视频号等）热度柱状排行，支持时间窗与内容类型筛选，带飞书复盘优先，点击柱形直达该赛道或平台Top帖。',
+          en: 'Bar rankings of 13 AI tracks (AI coding, AI tools, AI agents, AI writing and more) and 9 platforms (Xiaohongshu, WeChat Official Accounts, Douyin and more) with time-window and content-type filters. Feishu retrospectives come first; click a bar to open the top posts.'
+        },
+        image: '/projects/poju-ai/feature-1.png'
+      },
+      {
+        title: { zh: '赛道×平台热力矩阵', en: 'Track × Platform Heatmap' },
+        description: {
+          zh: '13赛道×9平台交叉热力矩阵，一眼看清各赛道在各平台的内容热度分布，支持圈友帖/精华帖/带飞书三态切换，点击热力块查看组合Top帖。',
+          en: 'A 13x9 cross heatmap revealing content heat across tracks and platforms at a glance, with member-post / featured / with-Feishu toggles. Click any cell for the top posts of that combination.'
+        },
+        image: '/projects/poju-ai/feature-2.png'
+      },
+      {
+        title: { zh: '城市活跃度与圈友关联', en: 'City Activity & Member Affinity' },
+        description: {
+          zh: 'Top20城市组局数与精华帖数组合对比图，配合圈友城市关联度Top15排行（按发起组局数），直观呈现社区在全国各地的活跃格局。',
+          en: 'Top-20 cities compared by meetups vs featured posts, plus a member-city affinity Top 15 ranked by meetups initiated, mapping the nationwide activity landscape.'
+        },
+        image: '/projects/poju-ai/feature-3.png'
+      },
+      {
+        title: { zh: '点赞榜与作者榜', en: 'Like & Author Leaderboards' },
+        description: {
+          zh: '文章点赞榜Top100仅统计带飞书文档的精华帖；作者发帖榜支持按精华帖数、发帖数、总赞数等多维排序筛选，高频创作者一目了然。',
+          en: 'The Top-100 like leaderboard counts only featured posts with Feishu docs; the author board sorts by featured posts, total posts, or total likes to surface high-frequency creators.'
+        },
+        image: '/projects/poju-ai/feature-4.png'
+      },
+      {
+        title: { zh: 'AI洞察与风向标', en: 'AI Insights & Daily Trends' },
+        description: {
+          zh: 'AI洞察汇集官方深度洞察文章，AI风向标每日快报追踪AI资讯动态；两者独立统计、含飞书链接优先排序，仅保留近一月内容。',
+          en: 'AI Insights curates official deep-dive articles while the daily AI Trends brief tracks news; both are independently tallied, sorted with Feishu links first, and keep only the past month.'
+        },
+        image: '/projects/poju-ai/feature-5.png'
+      },
+      {
+        title: { zh: '精华内容待分发池', en: 'Featured Content Pool' },
+        description: {
+          zh: '4139+条精华内容按作者城市匹配自动生成飞书分发文案，支持待审核/已分发/已忽略状态筛选与单篇、按作者聚合两种视图，配合城市总览点击城市名联动筛选。',
+          en: 'The 4,139+ item featured pool auto-generates Feishu distribution copy by author-city matching, with pending / distributed / ignored status filters, single or group-by-author views, and a city-overview panel for click-to-filter.'
+        },
+        image: '/projects/poju-ai/feature-6.png'
+      }
+    ],
+    techStack: ['HTML', 'JavaScript', 'ECharts', '飞书生态']
+  },
+  {
     slug: 'ai-draw',
     name: '小卡AI绘图',
     tagline: {
