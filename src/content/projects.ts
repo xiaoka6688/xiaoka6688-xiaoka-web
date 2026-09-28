@@ -652,6 +652,57 @@ export const projects: ProjectDetail[] = [
       }
     ],
     techStack: ['HTML', 'JavaScript', 'CSS', 'Markdown']
+  },
+  {
+    slug: 'xiaoka-portfolio',
+    name: '小卡-AI实战项目集',
+    tagline: {
+      zh: '个人 AI 实战作品集站：项目展示、服务演示与技能沉淀的一站式个人站点，集成多个已上线的 AI 子站。',
+      en: 'Personal AI arsenal portfolio: a one-stop site for project showcase, service demos and skill building, integrating multiple shipped AI subdomains.'
+    },
+    description: {
+      zh: '小卡-AI实战项目集（xiaoka.pojuai.com）是小卡的个人 AI 实战作品集网站，集中展示其构建的各类 AI 项目与服务：数据看板（破局AI项目圈·资源站）、文档知识库（FDE 学习中心）、AI 绘图工具、Logo 设计、海报编辑器等十余个已上线子站。全站分 服务 / 项目 / 关于我 / 联系 四大板块，提供服务内联演示、项目详情、明暗主题切换，是一个既能对外展示作品、又能持续沉淀个人 AI 技能的端口站点。',
+      en: '小卡-AI实战项目集 (xiaoka.pojuai.com) is the personal AI arsenal portfolio of 小卡, showcasing the AI projects and services he builds: a data dashboard (破局AI项目圈·资源站), a docs academy (FDE 学习中心), AI drawing tools, Logo design, a poster editor and ten-plus other shipped subdomains. Organized into Services / Projects / About / Contact, it offers inline service demos, project detail pages and a light/dark theme, serving as both an outward-facing portfolio and a living hub of personal AI skills.'
+    },
+    tags: ['个人作品集', 'React', '前端', 'AI实战'],
+    githubUrl: 'https://github.com/xiaoka6688/xiaoka6688-xiaoka-web',
+    liveUrl: 'https://xiaoka.pojuai.com/',
+    heroImage: '/projects/xiaoka-portfolio/hero.png',
+    features: [
+      {
+        title: { zh: '关于我', en: 'About' },
+        description: {
+          zh: '个人名片板块：AI实战派布道者定位，标注 3 年+ AI 研习、10 年+ 无人机行业、5 年+ 新媒体运营与高新企业背景，快速建立信任背书。',
+          en: 'Personal profile: positioned as an AI practitioner-evangelist, with 3+ years of AI study, 10+ years of drones, 5+ years of new media and big-tech background for quick credibility.'
+        },
+        image: '/projects/xiaoka-portfolio/feature-1.png'
+      },
+      {
+        title: { zh: '服务', en: 'Services' },
+        description: {
+          zh: '服务板块将上线子站折叠为可展开的列表，每行含脚本演示与访问按钮，二/三级折叠让十余个服务一站触达。',
+          en: 'The Services section folds shipped subdomains into an expandable list with scripted demos and visit buttons, reaching a dozen services through two-level folding.'
+        },
+        image: '/projects/xiaoka-portfolio/feature-2.png'
+      },
+      {
+        title: { zh: '项目', en: 'Projects' },
+        description: {
+          zh: '项目板块以卡片网格展示每个作品的封面、摘要与标签，点击进入详情页查看完整特性截图与技术栈。',
+          en: 'The Projects section presents each work as a card grid with cover, summary and tags; clicking opens a detail page with full feature screenshots and the tech stack.'
+        },
+        image: '/projects/xiaoka-portfolio/feature-3.png'
+      },
+      {
+        title: { zh: '联系', en: 'Contact' },
+        description: {
+          zh: '联系板块提供发射邮件等直连入口，配合明暗主题切换与沉浸式渐变背景，保持整体视觉一致的品牌感。',
+          en: 'The Contact section offers direct channels such as email, along with light/dark theme switching and an immersive gradient background for consistent branding.'
+        },
+        image: '/projects/xiaoka-portfolio/feature-4.png'
+      }
+    ],
+    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS']
   }
 ];
 

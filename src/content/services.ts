@@ -22,7 +22,8 @@ export type DemoId =
   | 'logo-design'
   | 'ip-agent'
   | 'ai-design'
-  | 'news-trend';
+  | 'news-trend'
+  | 'xiaoka-portfolio';
 
 export interface ServiceItem {
   slug: string;
@@ -272,6 +273,25 @@ export const services: ServiceItem[] = [
     sampleImage: null,
     accentRgba: 'rgba(56, 189, 248, 0.55)',
     visitUrl: 'https://news.pojuai.com/'
+  },
+  {
+    slug: 'xiaoka-portfolio',
+    name: '小卡-AI实战项目集',
+    subtitle: { zh: '个人作品集 · 技能沉淀', en: 'Personal Portfolio · Skill Hub' },
+    tagline: {
+      zh: '集成十余个已上线 AI 子站的一站式个人站点：项目展示、服务演示、关于我与联系直达，附带明暗主题沉浸式体验。',
+      en: 'A one-stop personal site integrating ten-plus shipped AI subdomains: project showcase, service demos, about and contact, with an immersive light/dark theme.'
+    },
+    features: {
+      zh: ['项目与服务一站式展示 · 十余个 AI 子站直达', '服务内联演示 · 二/三级折叠 × 明暗主题', '关于我 · 项目详情 · 联系板块品牌化呈现'],
+      en: ['One-stop project & service showcase · direct links to a dozen AI subdomains', 'Inline service demos · 2-3 level folding × light/dark theme', 'About · project details · branded contact section']
+    },
+    tags: ['个人作品集', 'React', 'AI实战'],
+    emblem: 'chronicle',
+    demo: 'xiaoka-portfolio',
+    sampleImage: null,
+    accentRgba: 'rgba(139, 92, 246, 0.55)',
+    visitUrl: 'https://xiaoka.pojuai.com/'
   }
 ];
 
@@ -303,7 +323,8 @@ export const serviceLayout: ServiceEntry[] = [
   { kind: 'item', slug: 'ai-draw' },
   { kind: 'item', slug: 'dreampix' },
   { kind: 'item', slug: 'poster-editor' },
-  { kind: 'item', slug: 'news-trend' }
+  { kind: 'item', slug: 'news-trend' },
+  { kind: 'item', slug: 'xiaoka-portfolio' }
 ];
 
 /** slug → ServiceItem, for the layout renderer to resolve entries. */

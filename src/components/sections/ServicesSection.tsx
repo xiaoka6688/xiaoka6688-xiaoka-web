@@ -25,6 +25,7 @@ import { PoetryCloudDemo } from './services/PoetryCloudDemo';
 import { PjhtDemo } from './services/PjhtDemo';
 import { PojuAiDemo } from './services/PojuAiDemo';
 import { FdeAcademyDemo } from './services/FdeAcademyDemo';
+import { XaokaPortfolioDemo } from './services/XaokaPortfolioDemo';
 import { AiDrawDemo } from './services/AiDrawDemo';
 import { DreampixDemo } from './services/DreampixDemo';
 import { PosterDemo } from './services/PosterDemo';
@@ -65,7 +66,8 @@ const DEMO_REGISTRY: Record<DemoId, () => JSX.Element> = {
   'logo-design': LogoDesignDemo,
   'ip-agent': IpAgentDemo,
   'ai-design': AiDesignDemo,
-  'news-trend': NewsTrendDemo
+  'news-trend': NewsTrendDemo,
+  'xiaoka-portfolio': XaokaPortfolioDemo
 };
 
 interface RowProps {
