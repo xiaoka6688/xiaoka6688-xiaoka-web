@@ -40,6 +40,7 @@ npm run preview   # 本地预览 dist/
 
 ```
 xiaoka-web/
+├── .trae/skills/xiaoka-site-publish/   # 上线技能：新项目/服务接入标准流程 + 截图脚本模板
 ├── public/
 │   ├── CNAME                 # 自定义域名（xiaoka.pojuai.com）
 │   ├── 404.html              # SPA 路由回退页
@@ -91,6 +92,25 @@ xiaoka-web/
 ## 如何修改内容
 
 所有内容都是**数据驱动的**，改文案不需要碰组件。
+
+### 🔥 新增项目 / 服务上线（推荐走 skill）
+
+把新项目、软件仓库或上线服务加入作品集站并部署上线，**推荐让 AI 调用 `.trae/skills/xiaoka-site-publish` 技能**完成全流程（已沉淀三次成功上线经验，换电脑 clone 仓库即可复用）。标准流程：
+
+```
+0. 先 git fetch/status 确认本地与远程同步
+1. 打开目标站点，识别类型（数据看板 / 文档知识库 / SaaS）+ 导航分类
+2. 按板块/分类截图 → public/projects/<slug>/
+3. projects.ts 新增条目（zh+en 双语，私有仓库不填 githubUrl）
+4. services.ts + 新 demo 组件 + ServicesSection 注册
+5. 同步文档计数（README / 项目状态 / 项目结构说明）
+6. npm run build 必须通过
+7. Chrome DevTools MCP 浏览器验证（详情页无破图、服务 demo 正常、无私有仓库按钮）
+8. 提交推送（先征得用户确认，push 前设代理）
+9. 轮询线上验证（JS 含新 slug/URL + 截图 200）
+```
+
+> 完整细节见 `.trae/skills/xiaoka-site-publish/SKILL.md` 与 `references/new-project-onboarding.md`（字段 schema）。
 
 ### 修改项目
 1. 把截图放进 `public/projects/<slug>/`（约定：`hero.png` 为主图，`feature-1/2/3.jpg` 为特性图；缺图会自动显示占位）。
@@ -162,6 +182,17 @@ xiaoka-web/
 - **初始加载**：504KB（gzip 152KB），r3f 按需加载
 - **内联加载指示器**：`index.html` 中旋转动画 + "加载中…" 文字
 - **浅色默认背景**：防止加载瞬间黑屏
+
+---
+
+## 换机 / 换工具快速上手
+
+1. clone 仓库 `xiaoka6688/xiaoka6688-xiaoka-web`（含 `.trae/skills/` 上线 skill）
+2. `npm install`（Node 20+）→ `npm run dev` 本地预览 / `npm run build` 构建验证
+3. 截图需 Playwright：`npm i -D playwright` + `npx playwright install chromium`
+4. push 到 GitHub 需要本地代理：`$env:HTTPS_PROXY="http://127.0.0.1:7897"`（Clash）
+5. 浏览器交互验证用 Chrome DevTools MCP；Vercel 部署有 1–3 分钟延迟，验证前需轮询线上 JS 确认已含新 slug
+6. 文档入口：README（结构+改内容）/ 项目状态（进度+已上线子站清单）/ 经验教训记录（踩坑汇总）/ 项目结构说明（目录+列表）
 
 ---
 
