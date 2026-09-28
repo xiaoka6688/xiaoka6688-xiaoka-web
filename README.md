@@ -56,8 +56,8 @@ xiaoka-web/
 │   ├── i18n/                 # 中英文案资源
 │   ├── content/              # 内容数据
 │   │   ├── about.ts          # 关于页内容
-│   │   ├── projects.ts        # 12 个项目数据
-│   │   ├── services.ts        # 10 个服务数据
+│   │   ├── projects.ts        # 13 个项目数据
+│   │   ├── services.ts        # 11 个服务数据
 │   │   └── credits.ts         # 致谢页内容
 │   ├── pages/                # HomePage / ProjectDetailPage / CreditsPage
 │   ├── components/

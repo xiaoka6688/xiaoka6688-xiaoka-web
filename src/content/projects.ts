@@ -481,6 +481,64 @@ export const projects: ProjectDetail[] = [
     techStack: ['HTML', 'JavaScript', 'ECharts', '飞书生态']
   },
   {
+    slug: 'fde-academy',
+    name: 'FDE 学习中心',
+    tagline: {
+      zh: 'AI前沿部署工程师系统学习路径：17阶段技能树，从模型原理到生产部署，从推理优化到面试通关。',
+      en: 'Systematic learning path for AI frontier deployment engineers (FDE): a 17-stage roadmap from model internals to production, from inference optimization to interview mastery.'
+    },
+    description: {
+      zh: 'FDE 学习中心是专为「AI 前沿部署工程师」岗位设计的免费开源系统学习路径，17 个阶段由浅入深，从模型原理到推理优化、从生产部署到面试通关全链路覆盖。双学习路径：FDE 系统学习（深度掌握 Transformer/vLLM/量化/分布式/生产部署）与 Agentic AI 系统学习（L1-L5 从 Python 基础到多智能体、安全治理）。站内 65+ 篇技术文档、40+ 张 Mermaid 架构图、面试答题框架、7 个动手实验（vLLM 部署、量化、Profiling）、8 个源码深度解读（vLLM、SGLang、MCP SDK、LangGraph）、70B 模型上线等真实案例，并提供 AI 趋势追踪与 FDE 招聘岗位知识图谱，每周自动更新。',
+      en: 'FDE 学习中心 is a free, open-source systematic learning path for "AI Frontier Deployment Engineer" roles, running 17 stages from model fundamentals to inference optimization, production deployment, and interview success. It offers dual paths: FDE 系统学习 (deep dive into Transformer / vLLM / quantization / distributed / production) and Agentic AI 系统学习 (L1-L5 from Python basics to multi-agent and safety governance). Featuring 65+ technical docs, 40+ Mermaid architecture diagrams, interview answer frameworks, 7 hands-on labs (vLLM deploy, quantization, profiling), 8 source deep-dives (vLLM, SGLang, MCP SDK, LangGraph), real cases like 70B model launches, plus AI trend tracking and an FDE job knowledge graph, auto-updated weekly.'
+    },
+    tags: ['系统学习', 'AI工程', 'FDE', '文档站'],
+    liveUrl: 'https://fde.pojuai.com/',
+    heroImage: '/projects/fde-academy/hero.png',
+    features: [
+      {
+        title: { zh: '系统学习', en: 'Systematic Learning' },
+        description: {
+          zh: '17 阶段技能树由浅入深：入门认知、Transformer/Attention/KV Cache/MoE 模型原理、GPU 底层、推理优化、分布式推理、生产部署、Agent 架构，到面试通关与动手实验，配合 Agentic AI 双路径（L1-L5）。',
+          en: 'A 17-stage roadmap from fundamentals (Transformer / Attention / KV Cache / MoE), GPU internals, inference optimization, distributed inference, production deployment, agent architecture, to interviews and hands-on labs, plus a dual Agentic AI path (L1-L5).'
+        },
+        image: '/projects/fde-academy/feature-1.png'
+      },
+      {
+        title: { zh: '深度解读', en: 'Deep Dive' },
+        description: {
+          zh: '开源项目逐行精读：从教学级 nanoGPT、llm.c、llama.cpp，到生产级 vLLM（PagedAttention）、SGLang，再到 Claude Code Agent CLI 架构，8 大项目按难度递进，附代码量、核心看点与对应知识。',
+          en: 'Line-by-line source code reading: from educational nanoGPT, llm.c, llama.cpp, to production-level vLLM (PagedAttention) and SGLang, and the Claude Code Agent CLI architecture - 8 projects ranked by difficulty with code volume and key insights.'
+        },
+        image: '/projects/fde-academy/feature-2.png'
+      },
+      {
+        title: { zh: '工具教程', en: 'Tool Tutorials' },
+        description: {
+          zh: '平台工具全景解析与 FDE 实操教程：从开发、部署、监控到运维,手把手上手行业主流工具链，把理论落到真实工程场景。',
+          en: 'Hands-on tool tutorials spanning development, deployment, monitoring and operations, onboarding the mainstream toolchain so theory lands in real engineering practice.'
+        },
+        image: '/projects/fde-academy/feature-3.png'
+      },
+      {
+        title: { zh: 'AI 趋势', en: 'AI Trends' },
+        description: {
+          zh: '117 条行业/应用/GitHub 趋势实时追踪，S/A/B 三级标记快速筛出重磅突破（Claude/GPT/Kimi/DeepSeek 发布、推理框架、Agent 协议与融资风向），每周更新。',
+          en: 'Real-time tracking of 117 industry/application/GitHub trends, with S/A/B levels to surface breakthroughs (Claude/GPT/Kimi/DeepSeek releases, inference frameworks, agent protocols, funding), updated weekly.'
+        },
+        image: '/projects/fde-academy/feature-4.png'
+      },
+      {
+        title: { zh: 'FDE 招聘动态', en: 'FDE Recruitment' },
+        description: {
+          zh: '230 个 FDE 相关岗位聚合，支持按岗位方向 / 来源 / 校园类型 + 技能标签多级筛选，覆盖推理部署、Agent 应用、AI 基础设施等方向，近两周动态增量一目了然。',
+          en: '230 FDE-related jobs aggregated with multi-level filtering by role / source / type and skill tags, covering inference, agent apps, and AI infrastructure, with a view of the latest two-week additions.'
+        },
+        image: '/projects/fde-academy/feature-5.png'
+      }
+    ],
+    techStack: ['Docusaurus', 'React', 'Markdown', 'Mermaid']
+  },
+  {
     slug: 'ai-draw',
     name: '小卡AI绘图',
     tagline: {

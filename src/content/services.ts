@@ -14,6 +14,7 @@ export type DemoId =
   | 'poetry'
   | 'pjht'
   | 'poju-ai'
+  | 'fde-academy'
   | 'ai-draw'
   | 'dreampix'
   | 'poster-editor'
@@ -178,6 +179,25 @@ export const services: ServiceItem[] = [
     visitUrl: 'https://xmq.pojuai.com/'
   },
   {
+    slug: 'fde-academy',
+    name: 'FDE 学习中心',
+    subtitle: { zh: '系统学习 · 文档知识库', en: 'System Learning · Docs Academy' },
+    tagline: {
+      zh: 'AI前沿部署工程师免费开源系统学习路径：17阶段技能树、双学习路径、65+文档、源码解读、AI趋势与招聘岗位图谱。',
+      en: 'Free & open-source systematic learning for AI frontier deployment engineers: 17-stage roadmap, dual paths, 65+ docs, source deep-dives, AI trends and an FDE job graph.'
+    },
+    features: {
+      zh: ['双学习路径 · FDE 17阶段 + Agentic AI L1-L5', '65+文档 · 40+架构图 · 面试框架 · 7动手实验', '源码解读 · AI趋势 · 招聘岗位知识图谱'],
+      en: ['Dual paths: FDE 17-stage + Agentic AI L1-L5', '65+ docs · 40+ diagrams · interview frameworks · 7 labs', 'Source deep-dives · AI trends · FDE job knowledge graph']
+    },
+    tags: ['系统学习', 'AI工程', '文档站'],
+    emblem: 'fortune',
+    demo: 'fde-academy',
+    sampleImage: null,
+    accentRgba: 'rgba(251, 146, 60, 0.55)',
+    visitUrl: 'https://fde.pojuai.com/'
+  },
+  {
     slug: 'ai-draw',
     name: '小卡AI绘图',
     subtitle: { zh: 'AI绘图 · 国内可用', en: 'AI绘图 · 国内可用' },
@@ -279,6 +299,7 @@ export const serviceLayout: ServiceEntry[] = [
   { kind: 'item', slug: 'ai-design' },
   { kind: 'item', slug: 'pjht' },
   { kind: 'item', slug: 'poju-ai' },
+  { kind: 'item', slug: 'fde-academy' },
   { kind: 'item', slug: 'ai-draw' },
   { kind: 'item', slug: 'dreampix' },
   { kind: 'item', slug: 'poster-editor' },
